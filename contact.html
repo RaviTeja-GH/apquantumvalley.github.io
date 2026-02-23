@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Quantum Valley</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #1e293b;
+    background:#020617;
+    color:white;
+}
+
+button{
+    padding:12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="ai.html">Artificial Intelligence</a>
+<a href="cybersecurity.html">Cybersecurity</a>
+<a href="cloud.html">Cloud Computing</a>
+<a href="data.html">Data & Analytics</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<header>
+<h1>Contact Quantum Valley</h1>
+<p class="tagline">We would love to hear from you</p>
+</header>
+
+<section>
+<h2>Send a Message</h2>
+
+<form action="https://formspree.io/f/xldrdgya" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 Quantum Valley. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
