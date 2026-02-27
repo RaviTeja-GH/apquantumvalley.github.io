@@ -62,9 +62,33 @@
 </footer>
 
 <script>
-function toggleMenu(){
-    document.querySelector(".nav-links").classList.toggle("active");
+
+function sendMessage(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // get old messages
+    let messages = JSON.parse(localStorage.getItem("quantum_messages")) || [];
+
+    // add new message
+    messages.push({
+        name:name,
+        email:email,
+        message:message,
+        time:new Date().toLocaleString()
+    });
+
+    // SAVE
+    localStorage.setItem("quantum_messages", JSON.stringify(messages));
+
+    alert("Message saved successfully! We will contact you soon.");
+
+    document.getElementById("contactForm").reset();
 }
+
 </script>
 
 </body>
