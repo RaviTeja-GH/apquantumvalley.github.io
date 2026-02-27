@@ -4,56 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Quantum Valley</title>
+
 <link rel="stylesheet" href="style.css">
-
-<style>
-form{
-    max-width:500px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input, textarea{
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #1e293b;
-    background:#020617;
-    color:white;
-}
-
-button{
-    padding:12px;
-    border:none;
-    background:#2563eb;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#1d4ed8;
-}
-</style>
 </head>
 
 <body>
 
 <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="ai.html">Artificial Intelligence</a>
-    <a href="cybersecurity.html">Cybersecurity</a>
-    <a href="cloud.html">Cloud Computing</a>
-    <a href="data.html">Data & Analytics</a>
-    <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
-</div>
-
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="ai.html">Artificial Intelligence</a>
+        <a href="cybersecurity.html">Cybersecurity</a>
+        <a href="cloud.html">Cloud Computing</a>
+        <a href="data.html">Data & Analytics</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </div>
 </nav>
 
 <header>
@@ -61,15 +29,17 @@ button:hover{
 <p class="tagline">We would love to hear from you</p>
 </header>
 
-<section>
+<section class="section">
+
 <h2>Send a Message</h2>
 
-<form id="contactForm" action="https://formspree.io/f/meelpkgr" method="POST">
-<input type="text" id="name" name="name" placeholder="Your Name" required>
+<form action="https://formspree.io/f/meelpkgr" method="POST" class="contact-form">
 
-<input type="email" id="email" name="email" placeholder="Your Email" required>
+<input type="text" name="name" placeholder="Your Name" required>
 
-<textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
 <button type="submit">Send Message</button>
 
@@ -77,7 +47,7 @@ button:hover{
 
 </section>
 
-<footer style="background:#020617; padding:40px 20px; text-align:center; margin-top:60px; color:white;">
+<footer>
 
   <h3>Quantum Valley</h3>
   <p>Technology Learning & Innovation Platform</p>
@@ -85,49 +55,17 @@ button:hover{
   <p>Email: ravitejajavvadi25@gmail.com</p>
   <p>Location: Hyderabad, India</p>
 
-  <p style="margin-top:20px; color:#94a3b8;">
+  <p style="margin-top:20px;">
     © 2026 Quantum Valley. All Rights Reserved.
   </p>
 
 </footer>
+
 <script>
-
-// when form is submitted
-document.getElementById("contactForm").addEventListener("submit", function(){
-
-    // get values
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    // create message object
-    const newMessage = {
-        name: name,
-        email: email,
-        message: message,
-        time: new Date().toLocaleString()
-    };
-
-    // get existing messages
-    let messages = JSON.parse(localStorage.getItem("quantum_messages")) || [];
-
-    // add new message
-    messages.push(newMessage);
-
-    // save back to storage
-    localStorage.setItem("quantum_messages", JSON.stringify(messages));
-
-    // small confirmation
-    alert("Message saved successfully! We will contact you soon.");
-
-});
-</script>
-
-    <script>
 function toggleMenu(){
     document.querySelector(".nav-links").classList.toggle("active");
 }
 </script>
-    
+
 </body>
 </html>
