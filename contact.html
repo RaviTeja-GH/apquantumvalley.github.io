@@ -58,13 +58,12 @@ button:hover{
 <section>
 <h2>Send a Message</h2>
 
-<form action="https://formspree.io/f/meelpkgr" method="POST">
+<form id="contactForm" action="https://formspree.io/f/meelpkgr" method="POST">
+<input type="text" id="name" name="name" placeholder="Your Name" required>
 
-<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" id="email" name="email" placeholder="Your Email" required>
 
-<input type="email" name="email" placeholder="Your Email" required>
-
-<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+<textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
 
 <button type="submit">Send Message</button>
 
@@ -85,6 +84,37 @@ button:hover{
   </p>
 
 </footer>
+<script>
 
+// when form is submitted
+document.getElementById("contactForm").addEventListener("submit", function(){
+
+    // get values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // create message object
+    const newMessage = {
+        name: name,
+        email: email,
+        message: message,
+        time: new Date().toLocaleString()
+    };
+
+    // get existing messages
+    let messages = JSON.parse(localStorage.getItem("quantum_messages")) || [];
+
+    // add new message
+    messages.push(newMessage);
+
+    // save back to storage
+    localStorage.setItem("quantum_messages", JSON.stringify(messages));
+
+    // small confirmation
+    alert("Message saved successfully! We will contact you soon.");
+
+});
+</script>
 </body>
 </html>
