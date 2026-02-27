@@ -117,12 +117,16 @@
     <div class="login-box" id="loginBox">
         <h3>Quantum Login</h3>
 
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<div id="errorMsg" style="display:none; color:#ef4444; margin-top:10px; font-weight:bold;">
+Access Denied ❌
+</div>
 
         <button onclick="loginCheck()">Enter System</button>
 
-        <div class="success" id="successMsg">
+        <div class="success" id="successMsg"
+            style="display:none;">
             Access Granted ✔
         </div>
     </div>
@@ -136,7 +140,18 @@ function activateCore(){
 }
 
 function loginCheck(){
-    document.getElementById("successMsg").style.display="block";
+
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    if(user === "quantum" && pass === "valley123"){
+        document.getElementById("successMsg").style.display="block";
+        document.getElementById("errorMsg").style.display="none";
+    }
+    else{
+        document.getElementById("errorMsg").style.display="block";
+        document.getElementById("successMsg").style.display="none";
+    }
 }
 
 </script>
