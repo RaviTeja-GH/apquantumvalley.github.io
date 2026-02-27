@@ -13,15 +13,24 @@
 <h1>Quantum Valley</h1>
 <p class="tagline">Learn • Build • Innovate</p>
 </header>
-<nav class="navbar">
-<a href="index.html">Home</a>
-<a href="ai.html">Artificial Intelligence</a>
-<a href="cybersecurity.html">Cybersecurity</a>
-<a href="cloud.html">Cloud Computing</a>
-<a href="data.html">Data & Analytics</a>
-<a href="contact.html">Contact</a>
-<a href="login.html">Login</a>
-</nav><section>
+  
+<nav>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai.html">Artificial Intelligence</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="cloud.html">Cloud Computing</a>
+    <a href="data.html">Data & Analytics</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+</div>
+
+</nav>
+  <section>
+  
 <h2>About Quantum Valley</h2>
 <p>
 Quantum Valley is a technology learning and innovation platform focused on understanding modern computing systems, artificial intelligence, cybersecurity, cloud technologies and data systems.
@@ -56,5 +65,11 @@ Quantum Valley is a technology learning and innovation platform focused on under
 
 </footer>
 
+  <script>
+function toggleMenu(){
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
+  
 </body>
 </html>
