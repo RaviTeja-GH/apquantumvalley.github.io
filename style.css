@@ -13,6 +13,7 @@ body{
     line-height:1.6;
 }
 
+
 /* ===== HEADER ===== */
 
 header{
@@ -29,6 +30,7 @@ header h1{
     margin-top:10px;
     font-size:18px;
 }
+
 
 /* ===== NAVBAR ===== */
 
@@ -49,7 +51,7 @@ nav{
     color:#38bdf8;
 }
 
-/* links container */
+/* links */
 .nav-links{
     display:flex;
     justify-content:center;
@@ -58,7 +60,6 @@ nav{
     padding:15px;
 }
 
-/* nav links */
 .nav-links a{
     text-decoration:none;
     color:#38bdf8;
@@ -69,6 +70,7 @@ nav{
 .nav-links a:hover{
     color:white;
 }
+
 
 /* ===== CONTENT SECTIONS ===== */
 
@@ -89,52 +91,48 @@ section p{
     font-size:18px;
 }
 
-/* ===== CARDS ===== */
+
+/* ===== CARDS (FULLY CLICKABLE + GLOW) ===== */
 
 .card{
+    position:relative;
     background:#111827;
-    padding:22px;
     border-radius:14px;
     margin:20px auto;
     max-width:700px;
+    height:70px;
     box-shadow:0 0 18px rgba(0,0,0,0.5);
-    transition:all 0.35s ease;
-    cursor:pointer;
+    overflow:hidden;
+    transition:0.35s;
 }
 
-/* GLOW EFFECT */
-.card:hover{
-    transform:translateY(-6px) scale(1.02);
-    box-shadow:
-        0 0 12px rgba(56,189,248,0.4),
-        0 0 25px rgba(56,189,248,0.6),
-        0 0 50px rgba(14,165,233,0.6);
-}
-
-.card{
-    display:block;
+/* full clickable link */
+.card a{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-decoration:none;
     color:#38bdf8;
     font-weight:bold;
-    background:#111827;
-    padding:22px;
-    border-radius:14px;
-    margin:20px auto;
-    max-width:700px;
-    box-shadow:0 0 18px rgba(0,0,0,0.5);
-    transition:all 0.35s ease;
-    text-align:center;
+    font-size:18px;
 }
 
 /* hover glow */
 .card:hover{
-    color:white;
     transform:translateY(-6px) scale(1.02);
+    background:#0f172a;
     box-shadow:
-        0 0 12px rgba(56,189,248,0.4),
-        0 0 25px rgba(56,189,248,0.6),
-        0 0 50px rgba(14,165,233,0.6);
+        0 0 20px rgba(56,189,248,0.5),
+        0 0 40px rgba(56,189,248,0.35),
+        0 0 80px rgba(56,189,248,0.2);
 }
+
+.card:hover a{
+    color:white;
+}
+
 
 /* ===== FORM ===== */
 
@@ -168,6 +166,7 @@ button:hover{
     opacity:0.9;
 }
 
+
 /* ===== FOOTER ===== */
 
 footer{
@@ -177,6 +176,7 @@ footer{
     margin-top:60px;
     color:white;
 }
+
 
 /* ===== MOBILE ===== */
 
