@@ -4,16 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quantum Valley</title>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>Quantum Valley</h1>
-<p class="tagline">Learn • Build • Innovate</p>
-</header>
-  
+<!-- ===== NAVBAR (MUST BE FIRST) ===== -->
 <nav>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -29,8 +25,14 @@
 </div>
 
 </nav>
-  <section>
-  
+
+<!-- ===== HEADER ===== -->
+<header>
+<h1>Quantum Valley</h1>
+<p class="tagline">Learn • Build • Innovate</p>
+</header>
+
+<section>
 <h2>About Quantum Valley</h2>
 <p>
 Quantum Valley is a technology learning and innovation platform focused on understanding modern computing systems, artificial intelligence, cybersecurity, cloud technologies and data systems.
@@ -43,7 +45,6 @@ Quantum Valley is a technology learning and innovation platform focused on under
 <div class="card"><a href="cybersecurity.html">Cybersecurity</a></div>
 <div class="card"><a href="cloud.html">Cloud Computing</a></div>
 <div class="card"><a href="data.html">Data & Analytics</a></div>
-
 </section>
 
 <section>
@@ -52,24 +53,20 @@ Quantum Valley is a technology learning and innovation platform focused on under
 </section>
 
 <footer style="background:#020617; padding:40px 20px; text-align:center; margin-top:60px; color:white;">
-
   <h3>Quantum Valley</h3>
   <p>Technology Learning & Innovation Platform</p>
-
   <p>Email: ravitejajavvadi25@gmail.com</p>
   <p>Location: Hyderabad, India</p>
-
   <p style="margin-top:20px; color:#94a3b8;">
     © 2026 Quantum Valley. All Rights Reserved.
   </p>
-
 </footer>
 
-  <script>
+<script>
 function toggleMenu(){
     document.querySelector(".nav-links").classList.toggle("active");
 }
 </script>
-  
+
 </body>
 </html>
