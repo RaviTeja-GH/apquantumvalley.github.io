@@ -49,6 +49,15 @@ border-radius:8px;
 cursor:pointer;
 margin-top:20px;
 font-weight:600;">
+    <div id="profileBox" style="
+padding:15px;
+border:1px solid #1e293b;
+width:320px;
+border-radius:12px;
+margin-top:20px;
+background:#020617;
+color:#22d3ee;">
+</div>
 Logout
 </button>
 
@@ -56,29 +65,32 @@ Logout
 
 <script>
 
-/* protect page */
+// run when page loads
 window.onload = function(){
 
+    // get logged in user
     const user = localStorage.getItem("quantum_user");
 
+    // if no user → send to login
     if(!user){
         alert("Unauthorized Access! Please login first.");
         window.location.href = "login.html";
         return;
     }
 
-    // show profile info
+    // get login time
     const loginTime = localStorage.getItem("login_time");
 
-    document.getElementById("profileBox").innerHTML =
-    `
-    <h3>User Profile</h3>
-    <p><b>Username:</b> ${user}</p>
-    <p><b>Login Time:</b> ${loginTime}</p>
+    // display profile info
+    document.getElementById("profileBox").innerHTML = `
+        <h3>User Profile</h3>
+        <p><b>Username:</b> ${user}</p>
+        <p><b>Login Time:</b> ${loginTime}</p>
     `;
 };
 
-/* logout */
+
+// logout function
 function logout(){
     localStorage.removeItem("quantum_user");
     localStorage.removeItem("login_time");
