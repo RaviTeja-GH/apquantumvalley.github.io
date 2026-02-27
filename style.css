@@ -1,4 +1,4 @@
-/* ========== GLOBAL ========== */
+/* ================== GLOBAL ================== */
 
 *{
     box-sizing:border-box;
@@ -6,23 +6,27 @@
 
 body{
     margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(180deg,#020617,#0f172a,#020617);
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg,#020617,#0f172a,#020617);
     color:white;
 }
 
-/* Links */
+/* links */
 a{
     text-decoration:none;
     color:#38bdf8;
-    transition:0.25s;
+    transition:.25s;
+}
+
+a:visited{
+    color:#38bdf8;
 }
 
 a:hover{
     color:white;
 }
 
-/* ========== HEADER ========== */
+/* ================== HEADER ================== */
 
 header{
     text-align:center;
@@ -39,88 +43,132 @@ h1{
     font-size:18px;
 }
 
-/* ========== NAVBAR DESKTOP ========== */
+/* ================== NAVBAR ================== */
 
 nav{
     background:#020617;
-    padding:14px;
+    padding:14px 20px;
     position:sticky;
     top:0;
     z-index:1000;
-    border-top:1px solid rgba(255,255,255,0.1);
-    border-bottom:1px solid rgba(255,255,255,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
 }
 
+/* hamburger button */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#38bdf8;
+}
+
+/* nav links container */
 .nav-links{
     display:flex;
-    align-items:center;
-    gap:10px;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 .nav-links a{
-    color:#38bdf8;
     padding:8px 14px;
     font-weight:600;
+    font-size:15px;
     border-radius:8px;
 }
 
 .nav-links a:hover{
     background:#2563eb;
-    box-shadow:0 0 12px rgba(37,99,235,0.6);
     color:white;
+    box-shadow:0 0 12px rgba(37,99,235,.5);
 }
 
-/* Hamburger */
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    color:#38bdf8;
-    cursor:pointer;
-    padding:6px 10px;
+/* ================== MOBILE NAV ================== */
+
+@media(max-width:768px){
+
+    nav{
+        justify-content:space-between;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:58px;
+        left:0;
+        width:100%;
+        background:#020617;
+        flex-direction:column;
+        padding:15px 0;
+        border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-links a{
+        padding:14px;
+        display:block;
+        text-align:center;
+        font-size:17px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
 }
 
-/* ========== SECTIONS ========== */
+/* ================== SECTIONS ================== */
 
 section{
     padding:50px 20px;
     text-align:center;
 }
 
+/* content containers */
+.container,
+.section{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+    text-align:left;
+}
+
+/* headings */
 h2{
     color:#22d3ee;
     margin-bottom:20px;
 }
 
+/* paragraphs */
 p{
     color:#cbd5f5;
     line-height:1.7;
-    max-width:800px;
-    margin:auto;
 }
 
-/* Cards */
+/* ================== CARDS ================== */
+
 .card{
     background:rgba(255,255,255,0.06);
     border:1px solid rgba(255,255,255,0.15);
-    padding:18px;
-    margin:12px auto;
-    width:60%;
+    padding:20px;
+    margin:18px auto;
     border-radius:12px;
-    transition:0.3s;
-    font-size:18px;
-    font-weight:600;
+    transition:.3s;
 }
 
 .card:hover{
     background:linear-gradient(135deg,#2563eb,#06b6d4);
-    transform:scale(1.06);
-    box-shadow:0 0 25px rgba(56,189,248,0.8);
+    transform:scale(1.03);
+    box-shadow:0 0 25px rgba(56,189,248,0.7);
 }
 
-/* ========== FORMS ========== */
+/* ================== FORMS ================== */
 
 form{
     max-width:500px;
@@ -137,77 +185,50 @@ input, textarea{
     background:#020617;
     color:white;
     font-size:15px;
+    outline:none;
 }
 
 input:focus, textarea:focus{
     border:1px solid #38bdf8;
     box-shadow:0 0 8px rgba(56,189,248,0.6);
-    outline:none;
 }
 
 button{
-    padding:12px 20px;
-    background:#2563eb;
+    padding:12px 22px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
     color:white;
     border:none;
-    border-radius:8px;
-    cursor:pointer;
+    border-radius:10px;
+    font-size:16px;
     font-weight:600;
+    cursor:pointer;
+    transition:.25s;
 }
 
 button:hover{
-    background:#1d4ed8;
+    transform:scale(1.03);
+    box-shadow:0 0 12px rgba(56,189,248,0.7);
 }
 
-/* ========== FOOTER ========== */
+/* ================== FOOTER ================== */
 
 footer{
     background:#020617;
     text-align:center;
-    padding:20px;
+    padding:40px 20px;
+    margin-top:60px;
     border-top:1px solid rgba(255,255,255,0.1);
     color:#94a3b8;
     font-size:14px;
 }
 
-/* ========== MOBILE NAVBAR ========== */
+/* ================== MOBILE CONTENT ALIGN ================== */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
-    .menu-toggle{
-        display:block;
-        z-index:1001;
-    }
-
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:60px;
-        left:0;
-        width:100%;
-        background:#020617;
-        flex-direction:column;
+    .container,
+    .section{
         text-align:center;
-        border-top:1px solid rgba(255,255,255,0.1);
-        padding:10px 0;
-        z-index:999;
     }
 
-    .nav-links a{
-        display:block;
-        padding:14px;
-        width:100%;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    nav{
-        position:relative;
-    }
-
-    .card{
-        width:90%;
-    }
 }
