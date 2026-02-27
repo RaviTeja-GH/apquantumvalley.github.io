@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Login | Quantum Valley</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* Center Screen */
+.login-wrapper{
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+/* Quantum Circle */
+.quantum-core{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background: radial-gradient(circle,#22d3ee,#2563eb,#020617);
+    box-shadow:0 0 30px #22d3ee,0 0 60px #2563eb;
+    cursor:pointer;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+.core-text{
+    margin-top:20px;
+    color:#22d3ee;
+    font-weight:600;
+}
+
+/* Login Box */
+.login-box{
+    margin-top:30px;
+    background:rgba(2,6,23,0.9);
+    padding:25px;
+    border-radius:12px;
+    width:320px;
+    display:none;
+    box-shadow:0 0 25px rgba(34,211,238,0.5);
+}
+
+.login-box h3{
+    text-align:center;
+    color:#22d3ee;
+    margin-bottom:15px;
+}
+
+.login-box input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:6px;
+    border:1px solid #1e293b;
+    background:#020617;
+    color:white;
+}
+
+.login-box button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    background:#2563eb;
+    border:none;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    background:#1d4ed8;
+}
+
+.success{
+    text-align:center;
+    color:#22c55e;
+    margin-top:10px;
+    display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ai.html">Artificial Intelligence</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="cloud.html">Cloud Computing</a>
+    <a href="data.html">Data & Analytics</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<header>
+<h1>Quantum Access Portal</h1>
+<p class="tagline">Activate the Core to Continue</p>
+</header>
+
+<div class="login-wrapper">
+
+    <div class="quantum-core" onclick="activateCore()"></div>
+    <div class="core-text">Click the Quantum Core</div>
+
+    <div class="login-box" id="loginBox">
+        <h3>Quantum Login</h3>
+
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+
+        <button onclick="login()">Enter System</button>
+
+        <div class="success" id="successMsg">
+            Access Granted ✔
+        </div>
+    </div>
+
+</div>
+
+<script>
+function activateCore(){
+    document.getElementById("loginBox").style.display="block";
+}
+
+function login(){
+    document.getElementById("successMsg").style.display="block";
+}
+</script>
+
+</body>
+</html>
