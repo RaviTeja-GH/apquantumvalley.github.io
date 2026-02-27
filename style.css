@@ -272,3 +272,9 @@ li{
     margin:0 auto;
     display:block;
 }
+/* ===== CONTACT HEADING ALIGN ===== */
+
+.contact-section h2{
+    text-align:center;
+    margin-bottom:25px;
+}
