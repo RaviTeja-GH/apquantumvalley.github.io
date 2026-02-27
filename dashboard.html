@@ -25,61 +25,51 @@
 </header>
 
 <section>
-<h2>Welcome</h2>
 
+<h2>Welcome</h2>
 <p>
 You have successfully accessed the protected Quantum System.
 Only logged-in users can see this page.
 </p>
 
-<!-- USER PROFILE BOX -->
-<div id="profileBox" style="
-padding:15px;
-border:1px solid #1e293b;
-width:320px;
-border-radius:12px;
-margin-top:20px;
-background:#020617;
-color:#22d3ee;">
-</div>
+<!-- USER PROFILE -->
+<div id="profileBox"></div>
 
-<!-- LOGOUT BUTTON -->
-<button onclick="logout()">
-Logout</button>
+<!-- LOGOUT -->
+<button onclick="logout()">Logout</button>
+
 <hr style="margin:50px 0; border:1px solid rgba(255,255,255,0.1);">
 
 <h2>Visitor Messages</h2>
 <p>Messages submitted from the Contact page</p>
 
 <div id="messagesContainer"></div>
+
 </section>
 
 <script>
 
+// ---------------- PROTECT PAGE ----------------
 window.onload = function(){
 
-    // get logged in user
     const user = localStorage.getItem("quantum_user");
 
-    // if no user → send to login
     if(!user){
         alert("Unauthorized Access! Please login first.");
         window.location.href = "login.html";
         return;
     }
 
-    // get login time
+    // -------- PROFILE INFO --------
     const loginTime = localStorage.getItem("login_time");
 
-    // display profile info
     document.getElementById("profileBox").innerHTML = `
         <h3>User Profile</h3>
         <p><b>Username:</b> ${user}</p>
         <p><b>Login Time:</b> ${loginTime}</p>
     `;
 
-    // ------------------ MESSAGES SECTION ------------------
-
+    // -------- LOAD MESSAGES --------
     let messages = JSON.parse(localStorage.getItem("quantum_messages")) || [];
 
     const container = document.getElementById("messagesContainer");
@@ -88,7 +78,12 @@ window.onload = function(){
         container.innerHTML = "<p>No messages received yet.</p>";
     }
     else{
-        messages.reverse().forEach(msg => {
+
+        // show newest first
+        messages.slice().reverse().forEach((msg, index) => {
+
+            const realIndex = messages.length - 1 - index;
+
             container.innerHTML += `
                 <div style="
                     background:#020617;
@@ -104,13 +99,27 @@ window.onload = function(){
                     <p><b>Email:</b> ${msg.email}</p>
                     <p><b>Message:</b> ${msg.message}</p>
                     <small style="color:#94a3b8;">${msg.time}</small>
+                    <br><br>
+
+                    <button onclick="deleteMessage(${realIndex})"
+                    style="background:#ef4444; padding:8px 16px; border-radius:6px;">
+                    Delete
+                    </button>
                 </div>
             `;
         });
     }
 };
 
-// logout
+// -------- DELETE MESSAGE --------
+function deleteMessage(i){
+    let messages = JSON.parse(localStorage.getItem("quantum_messages")) || [];
+    messages.splice(i,1);
+    localStorage.setItem("quantum_messages", JSON.stringify(messages));
+    location.reload();
+}
+
+// -------- LOGOUT --------
 function logout(){
     localStorage.removeItem("quantum_user");
     localStorage.removeItem("login_time");
