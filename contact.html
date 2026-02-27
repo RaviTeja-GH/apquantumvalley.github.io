@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,30 +11,39 @@
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="ai.html">Artificial Intelligence</a>
-        <a href="cybersecurity.html">Cybersecurity</a>
-        <a href="cloud.html">Cloud Computing</a>
-        <a href="data.html">Data & Analytics</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-    </div>
+```
+<div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai.html">Artificial Intelligence</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="cloud.html">Cloud Computing</a>
+    <a href="data.html">Data & Analytics</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+</div>
+```
+
 </nav>
+
+<!-- HEADER -->
 
 <header>
 <h1>Contact Quantum Valley</h1>
 <p class="tagline">We would love to hear from you</p>
 </header>
 
+<!-- CONTACT FORM -->
+
 <section class="section">
 
 <h2>Send a Message</h2>
 
-<form id="contactForm" onsubmit="sendMessage(event)" class="contact-form">
+<form id="contactForm" onsubmit="sendMessage(event)">
 
 <input type="text" id="name" placeholder="Your Name" required>
 
@@ -47,49 +57,18 @@
 
 </section>
 
-<footer>
+<!-- FOOTER -->
 
+<footer>
   <h3>Quantum Valley</h3>
   <p>Technology Learning & Innovation Platform</p>
-
   <p>Email: ravitejajavvadi25@gmail.com</p>
   <p>Location: Hyderabad, India</p>
-
-  <p style="margin-top:20px;">
-    © 2026 Quantum Valley. All Rights Reserved.
-  </p>
-
+  <p style="margin-top:20px;">© 2026 Quantum Valley. All Rights Reserved.</p>
 </footer>
 
-<script>
+<!-- SAVE MESSAGE TO DASHBOARD -->
 
-function sendMessage(e){
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    // get old messages
-    let messages = JSON.parse(localStorage.getItem("quantum_messages")) || [];
-
-    // add new message
-    messages.push({
-        name:name,
-        email:email,
-        message:message,
-        time:new Date().toLocaleString()
-    });
-
-    // SAVE
-    localStorage.setItem("quantum_messages", JSON.stringify(messages));
-
-    alert("Message saved successfully! We will contact you soon.");
-
-    document.getElementById("contactForm").reset();
-}
-
-</script>
 <script>
 function sendMessage(e){
     e.preventDefault();
@@ -114,5 +93,14 @@ function sendMessage(e){
     document.getElementById("contactForm").reset();
 }
 </script>
+
+<!-- MOBILE MENU -->
+
+<script>
+function toggleMenu(){
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
+
 </body>
 </html>
