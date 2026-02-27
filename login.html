@@ -130,12 +130,24 @@
 </div>
 
 <script>
-function activateCore(){
-    document.getElementById("loginBox").style.display="block";
-}
+function loginCheck(){
 
-function login(){
-    document.getElementById("successMsg").style.display="block";
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if(user === "quantum" && pass === "valley123"){
+
+        // create session
+        localStorage.setItem("quantum_user", "loggedin");
+
+        // redirect
+        window.location.href = "dashboard.html";
+        return false;
+
+    }else{
+        alert("Access Denied — Invalid Credentials");
+        return false;
+    }
 }
 </script>
 
