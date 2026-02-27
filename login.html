@@ -20,12 +20,12 @@ body{
     justify-content:center;
     align-items:center;
     color:white;
-    overflow:hidden;
 }
 
 /* ===== Portal Screen ===== */
 .portal{
     text-align:center;
+    position:relative;
 }
 
 .portal h1{
@@ -48,6 +48,8 @@ body{
     box-shadow:0 0 40px #38bdf8, 0 0 80px #0ea5e9;
     cursor:pointer;
     animation:pulse 2s infinite;
+    position:relative;
+    z-index:5;
 }
 
 @keyframes pulse{
@@ -239,14 +241,19 @@ button:hover{
 /* LIGHTNING BOLTS */
 .lightning{
     position:absolute;
-    width:3px;
-    height:140px;
+    left:50%;
+    top:50%;
+    width:4px;
+    height:220px;
+    transform:translate(-50%,-50%) rotate(20deg);
     background:linear-gradient(#67e8f9, white, #0ea5e9);
     box-shadow:
-        0 0 8px #67e8f9,
-        0 0 18px #38bdf8,
-        0 0 40px #0ea5e9;
+        0 0 12px #67e8f9,
+        0 0 30px #38bdf8,
+        0 0 80px #0ea5e9;
     opacity:0;
+    z-index:1;
+    pointer-events:none;
 }
 
 /* appear when portal activates */
