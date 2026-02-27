@@ -140,6 +140,11 @@ Access Denied ❌
 </div>
 
 <script>
+
+function activateCore(){
+    document.getElementById("loginBox").style.display = "block";
+}
+
 function togglePassword(){
     const pass = document.getElementById("password");
     const toggle = document.querySelector(".quantum-toggle");
@@ -155,6 +160,7 @@ function togglePassword(){
         text.innerText = "LOCKED";
     }
 }
+
 </script>
 
 </body>
