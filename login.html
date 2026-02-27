@@ -320,6 +320,13 @@ button:hover{
     <h1>Quantum Access Portal</h1>
     <p>Click the Quantum Core</p>
     <div class="quantum-core" onclick="activateCore()"></div>
+    <!-- PORTAL ENERGY RINGS -->
+<div class="portal-effect" id="portalEffect">
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="ring ring3"></div>
+    <div class="flash"></div>
+</div>
    <!-- lightning bolts -->
 <div class="lightning" style="left:45%; top:40%;"></div>
 <div class="lightning" style="left:52%; top:45%;"></div>
@@ -356,26 +363,25 @@ button:hover{
 function activateCore(){
 
     const portal = document.getElementById("portalScreen");
+    const effect = document.getElementById("portalEffect");
     const flash = document.getElementById("flash");
 
-    // start lightning
+    // start portal animation
+    effect.classList.add("active");
     portal.classList.add("active");
 
-    // flash
-    flash.classList.add("active");
-
-    // shake
-    document.body.style.animation = "shake 0.35s";
+    // screen shake
+    document.body.style.animation = "shake 0.4s";
 
     // hide portal
     setTimeout(()=>{
         portal.style.display="none";
-    },500);
+    },700);
 
     // show login
     setTimeout(()=>{
         document.getElementById("loginBox").style.display="block";
-    },850);
+    },1200);
 }
 
 /* SHOW PASSWORD CORE */
