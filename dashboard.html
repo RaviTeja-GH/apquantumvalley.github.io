@@ -46,12 +46,16 @@ color:#22d3ee;">
 <!-- LOGOUT BUTTON -->
 <button onclick="logout()">
 Logout</button>
+<hr style="margin:50px 0; border:1px solid rgba(255,255,255,0.1);">
 
+<h2>Visitor Messages</h2>
+<p>Messages submitted from the Contact page</p>
+
+<div id="messagesContainer"></div>
 </section>
 
 <script>
 
-// run when page loads
 window.onload = function(){
 
     // get logged in user
@@ -73,10 +77,40 @@ window.onload = function(){
         <p><b>Username:</b> ${user}</p>
         <p><b>Login Time:</b> ${loginTime}</p>
     `;
+
+    // ------------------ MESSAGES SECTION ------------------
+
+    let messages = JSON.parse(localStorage.getItem("quantum_messages")) || [];
+
+    const container = document.getElementById("messagesContainer");
+
+    if(messages.length === 0){
+        container.innerHTML = "<p>No messages received yet.</p>";
+    }
+    else{
+        messages.reverse().forEach(msg => {
+            container.innerHTML += `
+                <div style="
+                    background:#020617;
+                    border:1px solid rgba(56,189,248,0.4);
+                    padding:15px;
+                    margin:15px auto;
+                    width:70%;
+                    border-radius:12px;
+                    text-align:left;
+                    box-shadow:0 0 12px rgba(56,189,248,0.2);
+                ">
+                    <h3 style="color:#22d3ee;">${msg.name}</h3>
+                    <p><b>Email:</b> ${msg.email}</p>
+                    <p><b>Message:</b> ${msg.message}</p>
+                    <small style="color:#94a3b8;">${msg.time}</small>
+                </div>
+            `;
+        });
+    }
 };
 
-
-// logout function
+// logout
 function logout(){
     localStorage.removeItem("quantum_user");
     localStorage.removeItem("login_time");
