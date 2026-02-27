@@ -210,7 +210,83 @@ button:hover{
     0%{ transform:scale(.5); opacity:1; }
     100%{ transform:scale(6); opacity:0; }
 }
+/* ===== LIGHTNING EFFECT ===== */
 
+/* energy ring around core */
+.quantum-core::before{
+    content:"";
+    position:absolute;
+    inset:-25px;
+    border-radius:50%;
+    border:2px solid rgba(56,189,248,0.4);
+    animation:ringWave 2s infinite;
+}
+
+@keyframes ringWave{
+    0%{
+        transform:scale(0.8);
+        opacity:0.9;
+    }
+    70%{
+        transform:scale(1.4);
+        opacity:0;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+/* LIGHTNING BOLTS */
+.lightning{
+    position:absolute;
+    width:3px;
+    height:140px;
+    background:linear-gradient(#67e8f9, white, #0ea5e9);
+    box-shadow:
+        0 0 8px #67e8f9,
+        0 0 18px #38bdf8,
+        0 0 40px #0ea5e9;
+    opacity:0;
+}
+
+/* appear when portal activates */
+#portalScreen.active .lightning{
+    animation:zap 0.35s linear infinite;
+    opacity:1;
+}
+
+@keyframes zap{
+    0%{opacity:0; transform:translateY(-40px) rotate(15deg);}
+    40%{opacity:1;}
+    80%{opacity:0.3;}
+    100%{opacity:0;}
+}
+
+/* flash screen */
+.flash{
+    position:fixed;
+    inset:0;
+    background:white;
+    opacity:0;
+    pointer-events:none;
+}
+
+.flash.active{
+    animation:flashbang 0.4s;
+}
+
+@keyframes flashbang{
+    0%{opacity:0;}
+    50%{opacity:0.9;}
+    100%{opacity:0;}
+}
+    @keyframes shake{
+    0%{ transform:translate(0px,0px); }
+    25%{ transform:translate(3px,-3px); }
+    50%{ transform:translate(-3px,3px); }
+    75%{ transform:translate(2px,-2px); }
+    100%{ transform:translate(0px,0px); }
+}
 </style>
 
 </head>
@@ -223,24 +299,14 @@ button:hover{
     <h1>Quantum Access Portal</h1>
     <p>Click the Quantum Core</p>
     <div class="quantum-core" onclick="activateCore()"></div>
-    <!-- PORTAL OPENING EFFECT -->
-<div id="portalEffect" class="portal-effect">
-    <div class="ring ring1"></div>
-    <div class="ring ring2"></div>
-    <div class="ring ring3"></div>
-    <div class="ring ring4"></div>
-    <div class="ring ring5"></div>
-    <div class="ring ring6"></div>
-    <div class="ring ring7"></div>
-    <div class="ring ring8"></div>
-    <div class="ring ring9"></div>
-    <div class="ring ring10"></div>
+   <!-- lightning bolts -->
+<div class="lightning" style="left:45%; top:40%;"></div>
+<div class="lightning" style="left:52%; top:45%;"></div>
+<div class="lightning" style="left:48%; top:50%;"></div>
 
-
-
-    <div class="flash"></div>
-</div>
-</div>
+<!-- screen flash -->
+<div class="flash" id="flash"></div>
+    </div>
 
 <!-- STEP 2 LOGIN -->
 
@@ -268,17 +334,27 @@ button:hover{
 
 function activateCore(){
 
-    const effect = document.getElementById("portalEffect");
+    const portal = document.getElementById("portalScreen");
+    const flash = document.getElementById("flash");
 
-    // start animation
-    effect.classList.add("active");
+    // start lightning
+    portal.classList.add("active");
 
-    // after animation → open login
+    // flash
+    flash.classList.add("active");
+
+    // shake
+    document.body.style.animation = "shake 0.35s";
+
+    // hide portal
     setTimeout(()=>{
-        document.getElementById("portalScreen").style.display="none";
+        portal.style.display="none";
+    },500);
+
+    // show login
+    setTimeout(()=>{
         document.getElementById("loginBox").style.display="block";
-        effect.classList.remove("active");
-    },900);
+    },850);
 }
 
 /* SHOW PASSWORD CORE */
