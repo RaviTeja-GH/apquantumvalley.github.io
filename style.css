@@ -171,3 +171,27 @@ button{
 transform(1.03);
 box-shadow:0 0 12px rgba(56,189,248,0.7);
 }
+<script>
+
+function loginCheck(){
+
+    const username = document.querySelector('input[type="text"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+
+    const correctUser = "quantum";
+    const correctPass = "valley123";
+
+    if(username === correctUser && password === correctPass){
+
+        localStorage.setItem("quantum_user", "loggedin");
+
+        setTimeout(function(){
+            window.location.href = "dashboard.html";
+        }, 800);
+
+    }else{
+        alert("Wrong Username or Password");
+    }
+}
+
+</script>
