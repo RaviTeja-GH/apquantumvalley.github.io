@@ -132,9 +132,44 @@ footer{
 }
 /* Contact Page Form Fix */
 form{
-max-width:500px;
-margin:40px auto;
-text-align;
+    max-width:500px;
+    margin:40px auto;
+    text-align:center;
+}
+
+input, textarea{
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:#020617;
+    color:white;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus, textarea:focus{
+    border:1px solid #38bdf8;
+    box-shadow:0 0 8px rgba(56,189,248,0.6);
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 12px rgba(56,189,248,0.7);
 }
 
 input, textarea{
@@ -171,30 +206,7 @@ button{
 transform(1.03);
 box-shadow:0 0 12px rgba(56,189,248,0.7);
 }
-<script>
 
-function loginCheck(){
-
-    const username = document.querySelector('input[type="text"]').value;
-    const password = document.querySelector('input[type="password"]').value;
-
-    const correctUser = "quantum";
-    const correctPass = "valley123";
-
-    if(username === correctUser && password === correctPass){
-
-        localStorage.setItem("quantum_user", "loggedin");
-
-        setTimeout(function(){
-            window.location.href = "dashboard.html";
-        }, 800);
-
-    }else{
-        alert("Wrong Username or Password");
-    }
-}
-
-</script>
 /* ===== Quantum Password Toggle ===== */
 
 .password-wrapper{
@@ -257,4 +269,26 @@ function loginCheck(){
 
 .quantum-toggle.active #toggleText{
     color:#22c55e;
+}
+/* Quantum Core Click Fix */
+.quantum-core{
+    width:140px;
+    height:140px;
+    margin:40px auto;
+    border-radius:50%;
+    background:radial-gradient(circle at center,#38bdf8,#0ea5e9,#020617);
+    box-shadow:0 0 60px rgba(56,189,248,0.9), 0 0 120px rgba(56,189,248,0.4);
+    cursor:pointer;
+    position:relative;
+    z-index:5;
+}
+
+.login-box{
+    display:none;
+    position:relative;
+    z-index:10;
+}
+
+.login-wrapper{
+    text-align:center;
 }
