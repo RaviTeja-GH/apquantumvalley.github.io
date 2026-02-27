@@ -14,19 +14,18 @@
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
-    min-height:100vh;
+    height:100vh;
     background: radial-gradient(circle at center,#0f172a,#020617);
+    display:flex;
+    justify-content:center;
+    align-items:center;
     color:white;
-    position:relative;
+    overflow:hidden;
 }
 
 /* ===== Portal Screen ===== */
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    min-height:100vh;
-    background: radial-gradient(circle at center,#0f172a,#020617);
-    color:white;
+.portal{
+    text-align:center;
 }
 
 .portal h1{
@@ -49,11 +48,6 @@ body{
     box-shadow:0 0 40px #38bdf8, 0 0 80px #0ea5e9;
     cursor:pointer;
     animation:pulse 2s infinite;
-    position:relative;
-    z-index:5;
-    overflow:hidden;
-    display:block;
-margin:30px auto;
 }
 
 @keyframes pulse{
@@ -71,10 +65,6 @@ margin:30px auto;
     box-shadow:0 0 40px rgba(56,189,248,0.5);
     width:320px;
     text-align:center;
-    position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
 }
 
 .login-container h2{
@@ -166,11 +156,10 @@ button:hover{
 
 .portal-effect{
     position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:0;
-    height:0;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     pointer-events:none;
     opacity:0;
 }
@@ -183,14 +172,9 @@ button:hover{
 
 .ring{
     position:absolute;
-    left:50%;
-    top:50%;
-    width:160px;
-    height:160px;
-    transform:translate(-50%,-50%) scale(0.2);
     border-radius:50%;
     border:2px solid #38bdf8;
-    box-shadow:0 0 25px #38bdf8, 0 0 70px #0ea5e9;
+    box-shadow:0 0 20px #38bdf8, 0 0 60px #0ea5e9;
     animation:portalExpand 1.2s ease-out forwards;
 }
 
@@ -200,14 +184,14 @@ button:hover{
 
 @keyframes portalExpand{
     0%{
-        transform:translate(-50%,-50%) scale(0.2);
+        transform:scale(0.3);
         opacity:1;
     }
     70%{
         opacity:.9;
     }
     100%{
-        transform:translate(-50%,-50%) scale(18);
+        transform:scale(8);
         opacity:0;
     }
 }
@@ -226,104 +210,7 @@ button:hover{
     0%{ transform:scale(.5); opacity:1; }
     100%{ transform:scale(6); opacity:0; }
 }
-/* ===== LIGHTNING EFFECT ===== */
 
-/* energy ring around core */
-.quantum-core::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:160px;
-    height:160px;
-    transform:translate(-50%,-50%);
-    border-radius:50%;
-    border:2px solid rgba(56,189,248,0.5);
-    animation:ringWave 1.6s infinite;
-}
-
-@keyframes ringWave{
-    0%{
-        transform:scale(0.8);
-        opacity:0.9;
-    }
-    70%{
-        transform:scale(1.4);
-        opacity:0;
-    }
-    100%{
-        opacity:0;
-    }
-}
-
-/* LIGHTNING BOLTS */
-.lightning{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:8px;
-    height:230px;
-    transform:translate(-50%,-50%);
-    background:linear-gradient(#7dd3fc,#ffffff,#38bdf8);
-    opacity:0;
-    z-index:1;
-
-    /* Real lightning shape */
-    clip-path: polygon(
-        48% 0%,
-        58% 15%,
-        42% 15%,
-        65% 40%,
-        48% 40%,
-        72% 100%,
-        30% 55%,
-        50% 55%
-    );
-
-    box-shadow:
-        0 0 15px #7dd3fc,
-        0 0 35px #38bdf8,
-        0 0 90px #0ea5e9;
-}
-
-/* appear when portal activates */
-#portalScreen.active .lightning{
-    animation:zap 0.18s linear infinite;
-    opacity:1;
-}
-
-@keyframes zap{
-    0%{opacity:0; transform:translateY(-40px) rotate(15deg);}
-    40%{opacity:1;}
-    80%{opacity:0.3;}
-    100%{opacity:0;}
-}
-
-/* flash screen */
-.flash{
-    position:fixed;
-    inset:0;
-    background:white;
-    opacity:0;
-    pointer-events:none;
-}
-
-.flash.active{
-    animation:flashbang 0.4s;
-}
-
-@keyframes flashbang{
-    0%{opacity:0;}
-    50%{opacity:0.9;}
-    100%{opacity:0;}
-}
-    @keyframes shake{
-    0%{ transform:translate(0px,0px); }
-    25%{ transform:translate(3px,-3px); }
-    50%{ transform:translate(-3px,3px); }
-    75%{ transform:translate(2px,-2px); }
-    100%{ transform:translate(0px,0px); }
-}
 </style>
 
 </head>
@@ -336,21 +223,24 @@ button:hover{
     <h1>Quantum Access Portal</h1>
     <p>Click the Quantum Core</p>
     <div class="quantum-core" onclick="activateCore()"></div>
-    <!-- PORTAL ENERGY RINGS -->
-<div class="portal-effect" id="portalEffect">
+    <!-- PORTAL OPENING EFFECT -->
+<div id="portalEffect" class="portal-effect">
     <div class="ring ring1"></div>
     <div class="ring ring2"></div>
     <div class="ring ring3"></div>
+    <div class="ring ring4"></div>
+    <div class="ring ring5"></div>
+    <div class="ring ring6"></div>
+    <div class="ring ring7"></div>
+    <div class="ring ring8"></div>
+    <div class="ring ring9"></div>
+    <div class="ring ring10"></div>
+
+
+
     <div class="flash"></div>
 </div>
-   <!-- lightning bolts -->
-<div class="lightning" style="transform:translate(-50%,-50%) rotate(0deg);"></div>
-<div class="lightning" style="transform:translate(-50%,-50%) rotate(120deg);"></div>
-<div class="lightning" style="transform:translate(-50%,-50%) rotate(240deg);"></div>
-
-<!-- screen flash -->
-<div class="flash" id="flash"></div>
-    </div>
+</div>
 
 <!-- STEP 2 LOGIN -->
 
@@ -378,26 +268,17 @@ button:hover{
 
 function activateCore(){
 
-    const portal = document.getElementById("portalScreen");
     const effect = document.getElementById("portalEffect");
-    const flash = document.getElementById("flash");
 
-    // start portal animation
+    // start animation
     effect.classList.add("active");
-    portal.classList.add("active");
 
-    // screen shake
-    document.body.style.animation = "shake 0.4s";
-
-    // hide portal
+    // after animation → open login
     setTimeout(()=>{
-        portal.style.display="none";
-    },700);
-
-    // show login
-    setTimeout(()=>{
+        document.getElementById("portalScreen").style.display="none";
         document.getElementById("loginBox").style.display="block";
-    },1200);
+        effect.classList.remove("active");
+    },900);
 }
 
 /* SHOW PASSWORD CORE */
