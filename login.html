@@ -140,6 +140,10 @@ Access Denied ❌
 </div>
 
 <script>
+    // prevent opening login page if already logged in
+if(localStorage.getItem("quantum_user")){
+    window.location.href = "dashboard.html";
+}
 
 /* Open login box when core is clicked */
 function activateCore(){
@@ -174,8 +178,9 @@ function loginCheck(){
 
     if(username === correctUser && password === correctPass){
 
-        // save session
-        localStorage.setItem("quantum_user","loggedin");
+    // save session
+    localStorage.setItem("quantum_user", username);
+    localStorage.setItem("login_time", new Date().toLocaleString());
 
         // success message
         document.getElementById("successMsg").style.display = "block";
