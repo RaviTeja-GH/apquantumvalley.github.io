@@ -4,94 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Artificial Intelligence | Quantum Valley</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(180deg,#0f172a,#020617);
-    color:white;
-}
-
-header{
-    text-align:center;
-    padding:60px 20px;
-}
-
-header h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-header p{
-    color:#94a3b8;
-    font-size:18px;
-}
-
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:30px;
-    line-height:1.7;
-}
-
-.section{
-    margin-bottom:45px;
-}
-
-.section h2{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-.card{
-    background:#111827;
-    padding:18px;
-    border-radius:12px;
-    margin-top:15px;
-}
-
-ul{
-    margin-top:10px;
-}
-
-a.button{
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 25px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#94a3b8;
-}
-    .navbar{
-    background:#020617;
-    padding:15px;
-    text-align:center;
-    position:sticky;
-    top:0;
-}
-
-.navbar a{
-    color:#38bdf8;
-    margin:0 15px;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.navbar a:hover{
-    color:white;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- ===== NAVBAR FIRST ===== -->
 <nav>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -107,10 +25,11 @@ footer{
 </div>
 
 </nav>
-    
+
+<!-- ===== HEADER ===== -->
 <header>
     <h1>Artificial Intelligence</h1>
-    <p>Learn • Build • Innovate</p>
+    <p class="tagline">Learn • Build • Innovate</p>
 </header>
 
 <div class="container">
@@ -152,10 +71,10 @@ Machine Learning is a subset of AI where systems learn automatically from data w
 <li><b>Narrow AI (Weak AI):</b> AI designed to perform a specific task only. 
 Examples: Face unlock, spam filters, recommendation systems (YouTube/Netflix), voice assistants like Alexa and Siri.</li>
 
-<li><b>Generative AI (subset of Narrow AI):</b> AI that creates new content such as text, images, code, music and video. 
-Examples: ChatGPT, Google Gemini, Microsoft Copilot, GitHub Copilot, Grok.</li>
+<li><b>Generative AI:</b> AI that creates new content such as text, images, code, music and video. 
+Examples: ChatGPT, Google Gemini, Microsoft Copilot, GitHub Copilot.</li>
 
-<li><b>General AI (Strong AI / AGI):</b> Human-level intelligence capable of understanding, learning and performing any intellectual task like a human. (Currently not achieved — still under research).</li>
+<li><b>General AI (AGI):</b> Human-level intelligence capable of understanding and performing any intellectual task like a human (currently not achieved).</li>
 
 </ul>
 </div>
@@ -178,24 +97,20 @@ Examples: ChatGPT, Google Gemini, Microsoft Copilot, GitHub Copilot, Grok.</li>
 </div>
 
 <footer style="background:#020617; padding:40px 20px; text-align:center; margin-top:60px; color:white;">
-
   <h3>Quantum Valley</h3>
   <p>Technology Learning & Innovation Platform</p>
-
   <p>Email: ravitejajavvadi25@gmail.com</p>
   <p>Location: Hyderabad, India</p>
-
   <p style="margin-top:20px; color:#94a3b8;">
     © 2026 Quantum Valley. All Rights Reserved.
   </p>
-
 </footer>
 
-    <script>
+<script>
 function toggleMenu(){
     document.querySelector(".nav-links").classList.toggle("active");
 }
 </script>
-    
+
 </body>
 </html>
