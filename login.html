@@ -152,6 +152,64 @@ button{
 button:hover{
     opacity:0.9;
 }
+    /* ===== QUANTUM PORTAL ANIMATION ===== */
+
+.portal-effect{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
+    opacity:0;
+}
+
+.portal-effect.active{
+    opacity:1;
+}
+
+/* expanding rings */
+
+.ring{
+    position:absolute;
+    border-radius:50%;
+    border:2px solid #38bdf8;
+    box-shadow:0 0 20px #38bdf8, 0 0 60px #0ea5e9;
+    animation:portalExpand 1.2s ease-out forwards;
+}
+
+.ring1{ width:120px; height:120px; }
+.ring2{ width:120px; height:120px; animation-delay:.2s; }
+.ring3{ width:120px; height:120px; animation-delay:.4s; }
+
+@keyframes portalExpand{
+    0%{
+        transform:scale(0.3);
+        opacity:1;
+    }
+    70%{
+        opacity:.9;
+    }
+    100%{
+        transform:scale(8);
+        opacity:0;
+    }
+}
+
+/* white flash (portal burst) */
+.flash{
+    position:absolute;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.9),rgba(56,189,248,.4),transparent);
+    animation:portalFlash .8s ease-out forwards;
+}
+
+@keyframes portalFlash{
+    0%{ transform:scale(.5); opacity:1; }
+    100%{ transform:scale(6); opacity:0; }
+}
 
 </style>
 
@@ -165,6 +223,13 @@ button:hover{
     <h1>Quantum Access Portal</h1>
     <p>Click the Quantum Core</p>
     <div class="quantum-core" onclick="activateCore()"></div>
+    <!-- PORTAL OPENING EFFECT -->
+<div id="portalEffect" class="portal-effect">
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="ring ring3"></div>
+    <div class="flash"></div>
+</div>
 </div>
 
 <!-- STEP 2 LOGIN -->
@@ -192,8 +257,18 @@ button:hover{
 <script>
 
 function activateCore(){
-    document.getElementById("portalScreen").style.display="none";
-    document.getElementById("loginBox").style.display="block";
+
+    const effect = document.getElementById("portalEffect");
+
+    // start animation
+    effect.classList.add("active");
+
+    // after animation → open login
+    setTimeout(()=>{
+        document.getElementById("portalScreen").style.display="none";
+        document.getElementById("loginBox").style.display="block";
+        effect.classList.remove("active");
+    },900);
 }
 
 /* SHOW PASSWORD CORE */
