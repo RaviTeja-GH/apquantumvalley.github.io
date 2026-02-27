@@ -251,3 +251,24 @@ li{
 .container li{
     text-align:left;
 }
+/* ===== CONTACT PAGE FIX ===== */
+
+.contact-form{
+    margin:40px auto;
+    text-align:center;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-form button{
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    display:block;
+}
