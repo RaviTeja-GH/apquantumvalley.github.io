@@ -237,3 +237,35 @@ li{
 .info-box li{
     margin:8px 0;
 }
+/* ===== HOME PAGE DOMAIN BUTTONS ===== */
+
+a.card{
+    display:block;
+    background:#111827;
+    border-radius:14px;
+    margin:20px auto;
+    max-width:700px;
+    padding:22px;
+    text-align:center;
+    text-decoration:none;
+    color:#38bdf8;
+    font-weight:bold;
+    font-size:18px;
+    box-shadow:0 0 18px rgba(0,0,0,0.5);
+    transition:0.35s;
+}
+
+/* glow effect */
+a.card:hover{
+    transform:translateY(-6px) scale(1.02);
+    background:#0f172a;
+    color:white;
+    box-shadow:
+        0 0 20px rgba(56,189,248,0.5),
+        0 0 40px rgba(56,189,248,0.35),
+        0 0 80px rgba(56,189,248,0.2);
+}
+/* home page only center */
+body > section{
+    text-align:center;
+}
