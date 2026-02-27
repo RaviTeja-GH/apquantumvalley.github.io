@@ -40,14 +40,20 @@ button:hover{
 
 <body>
 
-<nav class="navbar">
-<a href="index.html">Home</a>
-<a href="ai.html">Artificial Intelligence</a>
-<a href="cybersecurity.html">Cybersecurity</a>
-<a href="cloud.html">Cloud Computing</a>
-<a href="data.html">Data & Analytics</a>
-<a href="contact.html">Contact</a>
-<a href="login.html">Login</a>
+<nav>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai.html">Artificial Intelligence</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="cloud.html">Cloud Computing</a>
+    <a href="data.html">Data & Analytics</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+</div>
+
 </nav>
 
 <header>
@@ -116,5 +122,12 @@ document.getElementById("contactForm").addEventListener("submit", function(){
 
 });
 </script>
+
+    <script>
+function toggleMenu(){
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
+    
 </body>
 </html>
