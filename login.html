@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -81,11 +82,59 @@ body{
     font-size:15px;
 }
 
-/* Status Text */
-.status{
-    margin:15px 0;
-    font-weight:bold;
-    letter-spacing:2px;
+/* ===== PASSWORD TOGGLE ===== */
+
+.password-wrapper{
+    position:relative;
+    width:100%;
+}
+
+.password-wrapper input{
+    padding-right:120px;
+}
+
+/* toggle button */
+.quantum-toggle{
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    background:rgba(37,99,235,0.15);
+    padding:5px 10px;
+    border-radius:20px;
+    border:1px solid rgba(56,189,248,0.4);
+}
+
+/* glowing dot */
+.quantum-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#38bdf8;
+    box-shadow:0 0 10px #38bdf8, 0 0 20px #38bdf8;
+}
+
+/* text */
+#toggleText{
+    font-size:12px;
+    color:#38bdf8;
+    font-weight:600;
+    margin-top:10px;
+}
+
+/* active */
+.quantum-toggle.active{
+    background:rgba(34,197,94,0.2);
+    border:1px solid #22c55e;
+}
+
+.quantum-toggle.active .quantum-dot{
+    background:#22c55e;
+    box-shadow:0 0 12px #22c55e, 0 0 25px #22c55e;
 }
 
 /* Button */
@@ -105,48 +154,75 @@ button:hover{
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- STEP 1 PORTAL -->
+<!-- STEP 1 -->
+
 <div class="portal" id="portalScreen">
     <h1>Quantum Access Portal</h1>
-    <p>Activate the Core to Continue</p>
-
+    <p>Click the Quantum Core</p>
     <div class="quantum-core" onclick="activateCore()"></div>
 </div>
 
 <!-- STEP 2 LOGIN -->
+
 <div class="login-container" id="loginBox">
     <h2>Quantum Login</h2>
 
-    <input type="text" id="username" placeholder="Username">
+```
+<input type="text" id="username" placeholder="Username">
+
+<div class="password-wrapper">
     <input type="password" id="password" placeholder="Password">
 
-    <div class="status" id="toggleText">LOCKED</div>
+    <div class="quantum-toggle" onclick="togglePassword()">
+        <div class="quantum-dot"></div>
+        <span>CORE</span>
+    </div>
+</div>
 
-    <button onclick="login()">Enter System</button>
+<div id="toggleText">LOCKED</div>
+
+<button onclick="login()">Enter System</button>
+```
+
 </div>
 
 <script>
 
-/* Show login after clicking core */
 function activateCore(){
     document.getElementById("portalScreen").style.display="none";
     document.getElementById("loginBox").style.display="block";
-    document.getElementById("toggleText").innerText="CORE ACTIVE";
 }
 
-/* Login check */
-function login(){
+/* SHOW PASSWORD CORE */
+function togglePassword(){
+    const pass = document.getElementById("password");
+    const toggle = document.querySelector(".quantum-toggle");
+    const text = document.getElementById("toggleText");
 
+    if(pass.type==="password"){
+        pass.type="text";
+        toggle.classList.add("active");
+        text.innerText="CORE ACTIVE";
+    }else{
+        pass.type="password";
+        toggle.classList.remove("active");
+        text.innerText="LOCKED";
+    }
+}
+
+/* LOGIN */
+function login(){
     const user=document.getElementById("username").value;
     const pass=document.getElementById("password").value;
 
     if(user==="quantum" && pass==="1234"){
         localStorage.setItem("quantum_user",user);
-        localStorage.setItem("login_time", new Date().toLocaleString());
+        localStorage.setItem("login_time",new Date().toLocaleString());
         window.location.href="dashboard.html";
     }else{
         alert("Invalid Credentials");
