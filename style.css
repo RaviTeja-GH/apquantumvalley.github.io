@@ -221,23 +221,26 @@ footer{
 @media (max-width:768px){
 
     nav{
-        flex-direction:column;
-        align-items:center;
-    }
+    position:relative;
+}
 
     .menu-toggle{
         display:block;
     }
 
     .nav-links{
-        display:none;
-        flex-direction:column;
-        width:100%;
-        text-align:center;
-        background:#020617;
-        border-top:1px solid rgba(255,255,255,0.1);
-        padding-bottom:10px;
-    }
+    display:none;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#020617;
+    flex-direction:column;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding:10px 0;
+    z-index:999;
+}
 
     .nav-links a{
         padding:12px;
@@ -248,4 +251,7 @@ footer{
     .nav-links.active{
         display:flex;
     }
+}
+.menu-toggle{
+    z-index:1000;
 }
