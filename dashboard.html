@@ -30,6 +30,15 @@
 You have successfully accessed the protected Quantum System.
 Only logged-in users can see this page.
 </p>
+    <div id="profileBox" style="
+padding:15px;
+border:1px solid #1e293b;
+width:320px;
+border-radius:12px;
+margin-top:20px;
+background:#020617;
+color:#22d3ee;">
+</div>
 
 <button onclick="logout()" style="
 padding:12px 22px;
@@ -47,19 +56,32 @@ Logout
 
 <script>
 
-/* wait until page loads */
+/* protect page */
 window.onload = function(){
 
-    if(localStorage.getItem("quantum_user") !== "loggedin"){
+    const user = localStorage.getItem("quantum_user");
+
+    if(!user){
         alert("Unauthorized Access! Please login first.");
         window.location.href = "login.html";
+        return;
     }
 
+    // show profile info
+    const loginTime = localStorage.getItem("login_time");
+
+    document.getElementById("profileBox").innerHTML =
+    `
+    <h3>User Profile</h3>
+    <p><b>Username:</b> ${user}</p>
+    <p><b>Login Time:</b> ${loginTime}</p>
+    `;
 };
 
 /* logout */
 function logout(){
     localStorage.removeItem("quantum_user");
+    localStorage.removeItem("login_time");
     window.location.href = "login.html";
 }
 
