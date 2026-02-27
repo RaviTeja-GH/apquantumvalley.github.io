@@ -3,95 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quantum Login</title>
+<title>Quantum Access Portal</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
 
-/* page background */
+/* ===== Background ===== */
 body{
     margin:0;
+    font-family:Arial, Helvetica, sans-serif;
     height:100vh;
+    background: radial-gradient(circle at center,#0f172a,#020617);
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:Arial, Helvetica, sans-serif;
-    background:radial-gradient(circle at center,#0f172a,#020617);
     color:white;
+    overflow:hidden;
 }
 
-/* login card */
-.login-box{
-    width:320px;
-    padding:35px 30px;
-    border-radius:18px;
-    background:#020617;
-    box-shadow:0 0 35px #22d3ee;
+/* ===== Portal Screen ===== */
+.portal{
     text-align:center;
 }
 
-/* title */
-.login-box h2{
-    color:#67e8f9;
-    margin-bottom:25px;
+.portal h1{
+    font-size:40px;
+    margin-bottom:10px;
 }
 
-/* inputs */
-.input-group{
-    position:relative;
-    margin-bottom:18px;
+.portal p{
+    color:#94a3b8;
+    margin-bottom:40px;
 }
 
-.input-group input{
+/* Glowing Core */
+.quantum-core{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background: radial-gradient(circle,#38bdf8,#0284c7,#020617);
+    margin:auto;
+    box-shadow:0 0 40px #38bdf8, 0 0 80px #0ea5e9;
+    cursor:pointer;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{ transform:scale(1); }
+    50%{ transform:scale(1.08); }
+    100%{ transform:scale(1); }
+}
+
+/* ===== Login Card ===== */
+.login-container{
+    display:none;
+    background:#020617;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 0 40px rgba(56,189,248,0.5);
+    width:320px;
+    text-align:center;
+}
+
+.login-container h2{
+    margin-bottom:20px;
+}
+
+.login-container input{
     width:100%;
     padding:12px;
+    margin:12px 0;
     border-radius:10px;
     border:1px solid #334155;
-    background:#020617;
+    background:#0f172a;
     color:white;
-    outline:none;
     font-size:15px;
 }
 
-/* ===== QUANTUM CORE BUTTON ===== */
-
-.quantum-toggle{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    margin:15px auto;
-    cursor:pointer;
-    background:radial-gradient(circle,#0ea5e9,#020617);
-    box-shadow:0 0 20px #22d3ee;
-    transition:0.4s;
-}
-
-.quantum-toggle.active{
-    box-shadow:0 0 35px #22d3ee,0 0 60px #06b6d4;
-    transform:scale(1.1);
-}
-
-/* status text */
-#toggleText{
+/* Status Text */
+.status{
+    margin:15px 0;
     font-weight:bold;
-    margin-top:10px;
     letter-spacing:2px;
 }
 
-/* login button */
-.login-btn{
+/* Button */
+button{
     width:100%;
     padding:12px;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     background:linear-gradient(90deg,#38bdf8,#2563eb);
     color:white;
     font-size:16px;
     cursor:pointer;
-    margin-top:15px;
 }
 
-.login-btn:hover{
+button:hover{
     opacity:0.9;
 }
 
@@ -100,63 +109,48 @@ body{
 
 <body>
 
-<div class="login-box">
+<!-- STEP 1 PORTAL -->
+<div class="portal" id="portalScreen">
+    <h1>Quantum Access Portal</h1>
+    <p>Activate the Core to Continue</p>
 
-<h2>Quantum Login</h2>
-
-<form onsubmit="return loginUser()">
-
-<div class="input-group">
-<input type="text" id="username" placeholder="Username" required>
+    <div class="quantum-core" onclick="activateCore()"></div>
 </div>
 
-<div class="input-group">
-<input type="password" id="password" placeholder="Password" required>
-</div>
+<!-- STEP 2 LOGIN -->
+<div class="login-container" id="loginBox">
+    <h2>Quantum Login</h2>
 
-<!-- QUANTUM CORE BUTTON -->
-<div class="quantum-toggle" onclick="togglePassword()"></div>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
 
-<p id="toggleText">LOCKED</p>
+    <div class="status" id="toggleText">LOCKED</div>
 
-<button class="login-btn" type="submit">Enter System</button>
-
-</form>
-
+    <button onclick="login()">Enter System</button>
 </div>
 
 <script>
 
-/* ===== PASSWORD TOGGLE ===== */
-function togglePassword(){
-    const pass = document.getElementById("password");
-    const toggle = document.querySelector(".quantum-toggle");
-    const text = document.getElementById("toggleText");
-
-    if(pass.type === "password"){
-        pass.type = "text";
-        toggle.classList.add("active");
-        text.innerText = "CORE ACTIVE";
-    }else{
-        pass.type = "password";
-        toggle.classList.remove("active");
-        text.innerText = "LOCKED";
-    }
+/* Show login after clicking core */
+function activateCore(){
+    document.getElementById("portalScreen").style.display="none";
+    document.getElementById("loginBox").style.display="block";
+    document.getElementById("toggleText").innerText="CORE ACTIVE";
 }
 
-/* ===== LOGIN SYSTEM ===== */
-function loginUser(){
+/* Login check */
+function login(){
 
-    const username = document.getElementById("username").value;
+    const user=document.getElementById("username").value;
+    const pass=document.getElementById("password").value;
 
-    localStorage.setItem("quantum_user", username);
-
-    const now = new Date();
-    localStorage.setItem("login_time", now.toLocaleString());
-
-    window.location.href = "dashboard.html";
-
-    return false;
+    if(user==="quantum" && pass==="1234"){
+        localStorage.setItem("quantum_user",user);
+        localStorage.setItem("login_time", new Date().toLocaleString());
+        window.location.href="dashboard.html";
+    }else{
+        alert("Invalid Credentials");
+    }
 }
 
 </script>
