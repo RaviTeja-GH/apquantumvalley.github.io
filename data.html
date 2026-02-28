@@ -49,14 +49,43 @@ Data Analytics is the process of examining and analyzing data to discover patter
 </section>
 
 <section>
-<h2>Types of Data Analytics</h2>
-<div class="info-box">
-<ul>
-<li><b>Descriptive Analytics:</b> What happened? (Reports, dashboards)</li>
-<li><b>Diagnostic Analytics:</b> Why did it happen?</li>
-<li><b>Predictive Analytics:</b> What may happen in future?</li>
-<li><b>Prescriptive Analytics:</b> What action should be taken?</li>
-</ul>
+<h2>Data Types</h2>
+
+<div class="accordion">
+
+    <div class="accordion-item">
+        <div class="accordion-title">Structured Data</div>
+        <div class="accordion-content">
+            <p>
+            Structured data is organized in rows and columns and stored inside databases.
+            It follows a fixed schema and can be easily searched using SQL queries.
+            Examples: customer tables, login records, bank transactions, employee databases.
+            </p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-title">Semi-Structured Data</div>
+        <div class="accordion-content">
+            <p>
+            Semi-structured data does not follow strict tables but still has some organization using tags or keys.
+            It is commonly used in APIs and web applications.
+            Examples: JSON files, XML responses, API responses, configuration files.
+            </p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-title">Unstructured Data</div>
+        <div class="accordion-content">
+            <p>
+            Unstructured data has no predefined format and cannot be stored in traditional database tables.
+            It usually requires processing or analysis tools.
+            Examples: images, videos, audio files, emails, chat messages, social media posts.
+            </p>
+        </div>
+    </div>
+
 </div>
 </section>
 
@@ -100,6 +129,13 @@ function toggleMenu(){
     document.querySelector(".nav-links").classList.toggle("active");
 }
 </script>
-
+<script>
+document.querySelectorAll(".accordion-title").forEach(item=>{
+    item.addEventListener("click",()=>{
+        const parent=item.parentElement;
+        parent.classList.toggle("active");
+    });
+});
+</script>
 </body>
 </html>
