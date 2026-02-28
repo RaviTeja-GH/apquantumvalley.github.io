@@ -5,22 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cloud Computing | Quantum Valley</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* INFO BOX */
+.info-box{
+    background:rgba(15,23,42,0.7);
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:16px;
+    padding:22px;
+    margin:20px auto;
+    max-width:850px;
+    text-align:left;
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+/* ACCORDION */
+.accordion{
+    max-width:850px;
+    margin:20px auto;
+}
+
+.accordion-item{
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:12px;
+    margin-bottom:12px;
+    overflow:hidden;
+    background:#020617;
+}
+
+.accordion-title{
+    padding:16px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.accordion-title:hover{
+    background:#0f172a;
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s;
+    padding:0 16px;
+}
+
+.accordion-item.active .accordion-content{
+    max-height:500px;
+    padding:16px;
+}
+
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="ai.html">Artificial Intelligence</a>
-        <a href="cybersecurity.html">Cybersecurity</a>
-        <a href="cloud.html">Cloud Computing</a>
-        <a href="data.html">Data & Analytics</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-    </div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="ai.html">Artificial Intelligence</a>
+<a href="cybersecurity.html">Cybersecurity</a>
+<a href="cloud.html">Cloud Computing</a>
+<a href="data.html">Data & Analytics</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+</div>
 </nav>
 
 <header>
@@ -28,64 +82,123 @@
 <p class="tagline">Delivering computing services over the internet</p>
 </header>
 
+<!-- WHAT IS CLOUD -->
 <section>
 <h2>What is Cloud Computing?</h2>
 <div class="info-box">
-<p>
-Cloud computing is the delivery of computing services such as servers, storage, databases, networking and software over the internet instead of using local computers or physical servers.
-</p>
+Cloud computing provides servers, storage, databases and software over the internet instead of physical hardware.  
+Users can access services from anywhere using a browser or application.
 </div>
 </section>
 
+<!-- DEPLOYMENT MODELS -->
 <section>
-<h2>Types of Cloud Service Models</h2>
+<h2>Cloud Deployment Models</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">Public Cloud</div>
+<div class="accordion-content">
+Services are available over the internet and shared among multiple users.  
+Example: AWS, Azure, Google Cloud.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Private Cloud</div>
+<div class="accordion-content">
+Dedicated cloud environment used by a single organization for higher security.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Hybrid Cloud</div>
+<div class="accordion-content">
+Combination of public and private cloud allowing data and applications to move between them.
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- STORAGE TYPES -->
+<section>
+<h2>Cloud Storage Types</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">Object Storage</div>
+<div class="accordion-content">
+Stores files like images, videos and backups. Example: AWS S3.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Block Storage</div>
+<div class="accordion-content">
+Used for operating systems and databases. Example: AWS EBS.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">File Storage</div>
+<div class="accordion-content">
+Shared file system accessed by multiple machines. Example: network file shares.
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- EXAMPLE SERVICES -->
+<section>
+<h2>Example Cloud Services</h2>
 <div class="info-box">
 <ul>
-<li><b>IaaS (Infrastructure as a Service):</b> Provides virtual machines, storage and networking resources.</li>
-<li><b>PaaS (Platform as a Service):</b> Provides a platform to develop and deploy applications.</li>
-<li><b>SaaS (Software as a Service):</b> Ready-to-use software accessed via browser (Gmail, Google Drive, Office 365).</li>
+<li><b>AWS EC2:</b> Virtual servers in cloud</li>
+<li><b>AWS S3:</b> Storage service</li>
+<li><b>Azure Virtual Machine:</b> Microsoft cloud server</li>
+<li><b>Google Compute Engine:</b> Google cloud server</li>
 </ul>
 </div>
 </section>
 
+<!-- WHY COMPANIES USE CLOUD -->
 <section>
-<h2>Popular Cloud Providers</h2>
+<h2>Why Companies Use Cloud</h2>
 <div class="info-box">
 <ul>
-<li>Amazon Web Services (AWS)</li>
-<li>Microsoft Azure</li>
-<li>Google Cloud Platform (GCP)</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2>Benefits of Cloud Computing</h2>
-<div class="info-box">
-<ul>
-<li>Cost saving (no physical hardware needed)</li>
-<li>Scalability and flexibility</li>
-<li>Access from anywhere</li>
-<li>Automatic backup and recovery</li>
-<li>High availability</li>
+<li>Reduced infrastructure cost</li>
+<li>High uptime and reliability</li>
+<li>Scalability during traffic spikes</li>
+<li>Automatic backups</li>
+<li>Remote access for employees</li>
 </ul>
 </div>
 </section>
 
 <footer>
-  <h3>Quantum Valley</h3>
-  <p>Technology Learning & Innovation Platform</p>
-  <p>Email: ravitejajavvadi25@gmail.com</p>
-  <p>Location: Hyderabad, India</p>
-  <p style="margin-top:20px; color:#94a3b8;">
-    © 2026 Quantum Valley. All Rights Reserved.
-  </p>
+<h3>Quantum Valley</h3>
+<p>Technology Learning & Innovation Platform</p>
+<p>Email: ravitejajavvadi25@gmail.com</p>
+<p>Location: Hyderabad, India</p>
+<p style="margin-top:20px; color:#94a3b8;">
+© 2026 Quantum Valley. All Rights Reserved.
+</p>
 </footer>
 
 <script>
 function toggleMenu(){
-    document.querySelector(".nav-links").classList.toggle("active");
+document.querySelector(".nav-links").classList.toggle("active");
 }
+
+document.querySelectorAll(".accordion-title").forEach(item=>{
+item.addEventListener("click",()=>{
+item.parentElement.classList.toggle("active");
+});
+});
 </script>
 
 </body>
