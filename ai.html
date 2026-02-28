@@ -5,105 +5,218 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Artificial Intelligence | Quantum Valley</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* INFO BOX */
+.info-box{
+    background:rgba(15,23,42,0.7);
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:16px;
+    padding:22px;
+    margin:20px auto;
+    max-width:850px;
+    text-align:left;
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+/* ACCORDION */
+.accordion{
+    max-width:850px;
+    margin:20px auto;
+}
+
+.accordion-item{
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:12px;
+    margin-bottom:12px;
+    overflow:hidden;
+    background:#020617;
+}
+
+.accordion-title{
+    padding:16px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.accordion-title:hover{
+    background:#0f172a;
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s;
+    padding:0 16px;
+}
+
+.accordion-item.active .accordion-content{
+    max-height:500px;
+    padding:16px;
+}
+
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="ai.html">Artificial Intelligence</a>
-        <a href="cybersecurity.html">Cybersecurity</a>
-        <a href="cloud.html">Cloud Computing</a>
-        <a href="data.html">Data & Analytics</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-    </div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="ai.html">Artificial Intelligence</a>
+<a href="cybersecurity.html">Cybersecurity</a>
+<a href="cloud.html">Cloud Computing</a>
+<a href="data.html">Data & Analytics</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+</div>
 </nav>
 
 <header>
-    <h1>Artificial Intelligence</h1>
-    <p class="tagline">Learn • Build • Innovate</p>
+<h1>Artificial Intelligence</h1>
+<p class="tagline">Machines that learn and make decisions</p>
 </header>
 
+<!-- WHAT IS AI -->
 <section>
 <h2>What is Artificial Intelligence?</h2>
-<p>
-Artificial Intelligence (AI) is the ability of a computer system to perform tasks that normally require human intelligence.
-These tasks include understanding language, recognizing images, decision making and problem solving.
-</p>
+<div class="info-box">
+Artificial Intelligence (AI) allows computers to simulate human intelligence.
+It helps machines understand data, identify patterns, make decisions and improve automatically.
+</div>
 </section>
 
+<!-- AI WORKFLOW -->
 <section>
-<h2>Real Life Examples</h2>
+<h2>AI Workflow</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">Data Collection</div>
+<div class="accordion-content">
+AI systems first collect data from users, applications, sensors and websites.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Training</div>
+<div class="accordion-content">
+Algorithms learn patterns from collected data.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Model</div>
+<div class="accordion-content">
+A trained model is created to make intelligent decisions.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Prediction</div>
+<div class="accordion-content">
+The system predicts results such as recommendations or classifications.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Feedback</div>
+<div class="accordion-content">
+User feedback improves accuracy continuously.
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- MACHINE LEARNING TYPES -->
+<section>
+<h2>Types of Machine Learning</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">Supervised Learning</div>
+<div class="accordion-content">
+Learns from labeled data (input + correct output). Example: Spam detection.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Unsupervised Learning</div>
+<div class="accordion-content">
+Finds hidden patterns without labeled data. Example: Customer segmentation.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Reinforcement Learning</div>
+<div class="accordion-content">
+Learns using rewards and penalties. Example: Game AI and robots.
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- AI TOOLS -->
+<section>
+<h2>AI Tools Used in Industry</h2>
 <div class="info-box">
 <ul>
-<li>Google Maps predicting fastest route</li>
-<li>YouTube video recommendations</li>
-<li>Face unlock in smartphones</li>
-<li>Chatbots in customer support</li>
-<li>Email spam filtering</li>
+<li>Python programming</li>
+<li>TensorFlow</li>
+<li>PyTorch</li>
+<li>APIs and automation</li>
+<li>Chatbots</li>
 </ul>
 </div>
 </section>
 
+<!-- COMPANY USAGE -->
 <section>
-<h2>AI vs Machine Learning</h2>
-<p>
-Artificial Intelligence is the overall concept of machines acting smart.
-Machine Learning is a subset of AI where systems learn automatically from data without being explicitly programmed.
-</p>
-</section>
-
-<section>
-<h2>Types of AI</h2>
+<h2>Real Company Usage</h2>
 <div class="info-box">
 <ul>
-<li><b>Narrow AI (Weak AI):</b> AI designed to perform a specific task only.
-Examples: Face unlock, spam filters, recommendation systems, voice assistants.</li>
-
-<li><b>Generative AI:</b> AI that creates new content such as text, images, code, music and video.
-Examples: ChatGPT, Gemini, Copilot.</li>
-
-<li><b>General AI (AGI):</b> Human-level intelligence capable of performing any intellectual task like a human (still under research).</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2>Why AI is Important in Industry</h2>
-<div class="info-box">
-<ul>
-<li>Automation of repetitive work</li>
-<li>Fraud detection in banking</li>
-<li>Customer support chatbots</li>
-<li>Predictive maintenance in companies</li>
+<li>Netflix movie recommendations</li>
+<li>Amazon product suggestions</li>
+<li>Google search ranking</li>
 </ul>
 </div>
 </section>
 
 <section>
 <a href="index.html">
-    <button>⬅ Back to Home</button>
+<button>⬅ Back to Home</button>
 </a>
 </section>
 
 <footer>
-  <h3>Quantum Valley</h3>
-  <p>Technology Learning & Innovation Platform</p>
-  <p>Email: ravitejajavvadi25@gmail.com</p>
-  <p>Location: Hyderabad, India</p>
-  <p style="margin-top:20px;">
-    © 2026 Quantum Valley. All Rights Reserved.
-  </p>
+<h3>Quantum Valley</h3>
+<p>Technology Learning & Innovation Platform</p>
+<p>Email: ravitejajavvadi25@gmail.com</p>
+<p>Location: Hyderabad, India</p>
+<p style="margin-top:20px;">
+© 2026 Quantum Valley. All Rights Reserved.
+</p>
 </footer>
 
 <script>
 function toggleMenu(){
-    document.querySelector(".nav-links").classList.toggle("active");
+document.querySelector(".nav-links").classList.toggle("active");
 }
+
+document.querySelectorAll(".accordion-title").forEach(item=>{
+item.addEventListener("click",()=>{
+item.parentElement.classList.toggle("active");
+});
+});
 </script>
 
 </body>
