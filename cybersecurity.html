@@ -5,22 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cybersecurity | Quantum Valley</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* INFO BOX */
+.info-box{
+    background:rgba(15,23,42,0.7);
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:16px;
+    padding:22px;
+    margin:20px auto;
+    max-width:850px;
+    text-align:left;
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+/* ACCORDION */
+.accordion{
+    max-width:850px;
+    margin:20px auto;
+}
+
+.accordion-item{
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:12px;
+    margin-bottom:12px;
+    overflow:hidden;
+    background:#020617;
+}
+
+.accordion-title{
+    padding:16px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.accordion-title:hover{
+    background:#0f172a;
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s;
+    padding:0 16px;
+}
+
+.accordion-item.active .accordion-content{
+    max-height:500px;
+    padding:16px;
+}
+
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="ai.html">Artificial Intelligence</a>
-        <a href="cybersecurity.html">Cybersecurity</a>
-        <a href="cloud.html">Cloud Computing</a>
-        <a href="data.html">Data & Analytics</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-    </div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="ai.html">Artificial Intelligence</a>
+<a href="cybersecurity.html">Cybersecurity</a>
+<a href="cloud.html">Cloud Computing</a>
+<a href="data.html">Data & Analytics</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+</div>
 </nav>
 
 <header>
@@ -28,86 +81,168 @@
 <p class="tagline">Protecting systems, networks and data from digital attacks</p>
 </header>
 
+<!-- WHAT IS CYBERSECURITY -->
 <section>
 <h2>What is Cybersecurity?</h2>
 <div class="info-box">
-<p>
-Cybersecurity is the practice of protecting computers, servers, mobile devices,
-networks and data from unauthorized access, cyber attacks and damage.
-It ensures confidentiality, integrity and availability of information.
-</p>
+Cybersecurity is the practice of protecting computers, networks, applications and data from unauthorized access, attacks and damage.
 </div>
 </section>
 
+<!-- CIA TRIAD -->
 <section>
-<h2>Common Types of Cyber Attacks</h2>
-<div class="info-box">
-<ul>
-<li><b>Phishing:</b> Fake emails or links used to steal passwords or bank details.</li>
-<li><b>Malware & Ransomware:</b> Harmful software that damages systems or locks files for money.</li>
-<li><b>Password Brute Force:</b> Hackers try many passwords until they guess correctly.</li>
-<li><b>Data Breach:</b> Stealing sensitive company or user information.</li>
-<li><b>Man-in-the-Middle Attack:</b> Intercepting communication between two users.</li>
-<li><b>Denial of Service (DDoS):</b> Flooding servers to make websites crash.</li>
-</ul>
+<h2>CIA Triad</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">Confidentiality</div>
+<div class="accordion-content">
+Ensures only authorized users can access data. Example: login authentication and encryption.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Integrity</div>
+<div class="accordion-content">
+Ensures data is not modified or tampered with by unauthorized users.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Availability</div>
+<div class="accordion-content">
+Ensures systems and services remain accessible when users need them.
+</div>
+</div>
+
 </div>
 </section>
 
+<!-- AUTHENTICATION METHODS -->
 <section>
-<h2>Security Protection Methods</h2>
-<div class="info-box">
-<ul>
-<li>Strong passwords and multi-factor authentication (OTP verification)</li>
-<li>Firewalls and antivirus software</li>
-<li>Data encryption</li>
-<li>Regular software updates and patches</li>
-<li>Secure Wi-Fi networks</li>
-<li>Backup and recovery systems</li>
-</ul>
+<h2>Authentication Methods</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">Password</div>
+<div class="accordion-content">
+Basic login authentication using username and password.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">OTP (One Time Password)</div>
+<div class="accordion-content">
+Temporary verification code sent to mobile or email.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Biometrics</div>
+<div class="accordion-content">
+Fingerprint, face recognition or iris scan verification.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">MFA (Multi-Factor Authentication)</div>
+<div class="accordion-content">
+Combines multiple authentication methods for stronger security.
+</div>
+</div>
+
 </div>
 </section>
 
+<!-- SECURITY LAYERS -->
 <section>
-<h2>Why Cybersecurity is Important</h2>
-<div class="info-box">
-<ul>
-<li>Protects personal information</li>
-<li>Prevents banking and financial fraud</li>
-<li>Secures company networks and databases</li>
-<li>Protects government and national infrastructure</li>
-<li>Maintains privacy in digital communication</li>
-</ul>
+<h2>Security Layers</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">Network Security</div>
+<div class="accordion-content">
+Protects internal network using firewalls and monitoring systems.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Application Security</div>
+<div class="accordion-content">
+Secures software and web applications from vulnerabilities.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Endpoint Security</div>
+<div class="accordion-content">
+Protects user devices like laptops, mobiles and servers.
+</div>
+</div>
+
 </div>
 </section>
 
+<!-- SECURITY TOOLS -->
 <section>
-<h2>Cybersecurity Career Roles</h2>
-<div class="info-box">
-<ul>
-<li>Security Analyst</li>
-<li>Ethical Hacker (Penetration Tester)</li>
-<li>Security Engineer</li>
-<li>Incident Responder</li>
-<li>Cloud Security Engineer</li>
-<li>Digital Forensics Investigator</li>
-</ul>
+<h2>Security Tools</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-title">SIEM</div>
+<div class="accordion-content">
+Security Information and Event Management tools analyze logs and detect threats.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">IDS / IPS</div>
+<div class="accordion-content">
+Detects and prevents suspicious network activity and attacks.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Firewall</div>
+<div class="accordion-content">
+Controls incoming and outgoing network traffic.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-title">Antivirus</div>
+<div class="accordion-content">
+Detects and removes malicious software from systems.
+</div>
+</div>
+
 </div>
 </section>
 
 <footer>
-  <h3>Quantum Valley</h3>
-  <p>Technology Learning & Innovation Platform</p>
-  <p>Email: ravitejajavvadi25@gmail.com</p>
-  <p>Location: Hyderabad, India</p>
-  <p style="margin-top:20px; color:#94a3b8;">
-    © 2026 Quantum Valley. All Rights Reserved.
-  </p>
+<h3>Quantum Valley</h3>
+<p>Technology Learning & Innovation Platform</p>
+<p>Email: ravitejajavvadi25@gmail.com</p>
+<p>Location: Hyderabad, India</p>
+<p style="margin-top:20px; color:#94a3b8;">
+© 2026 Quantum Valley. All Rights Reserved.
+</p>
 </footer>
 
 <script>
 function toggleMenu(){
-    document.querySelector(".nav-links").classList.toggle("active");
+document.querySelector(".nav-links").classList.toggle("active");
 }
+
+document.querySelectorAll(".accordion-title").forEach(item=>{
+item.addEventListener("click",()=>{
+item.parentElement.classList.toggle("active");
+});
+});
 </script>
 
 </body>
