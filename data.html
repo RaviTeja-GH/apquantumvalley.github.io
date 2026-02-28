@@ -5,6 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data & Analytics | Quantum Valley</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* INFO BOX */
+.info-box{
+    background:rgba(15,23,42,0.7);
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:16px;
+    padding:22px;
+    margin:20px auto;
+    max-width:850px;
+    text-align:left;
+    color:#cbd5e1;
+    line-height:1.7;
+    box-shadow:0 0 20px rgba(56,189,248,0.08);
+}
+
+/* ACCORDION */
+.accordion{
+    max-width:850px;
+    margin:20px auto;
+}
+
+.accordion-item{
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:12px;
+    margin-bottom:12px;
+    overflow:hidden;
+    background:#020617;
+}
+
+.accordion-title{
+    padding:16px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#38bdf8;
+    background:#020617;
+}
+
+.accordion-title:hover{
+    background:#0f172a;
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s;
+    padding:0 16px;
+}
+
+.accordion-item.active .accordion-content{
+    max-height:300px;
+    padding:16px;
+}
+
+</style>
 </head>
 
 <body>
@@ -29,16 +85,18 @@
 <p class="tagline">Understanding information to make better decisions</p>
 </header>
 
+<!-- WHAT IS DATA -->
 <section>
 <h2>What is Data?</h2>
 <div class="info-box">
 <p>
-Data is raw information collected from users, systems, applications or devices. 
+Data is raw information collected from users, systems, applications or devices.
 Examples include website visits, login records, transaction details and application logs.
 </p>
 </div>
 </section>
 
+<!-- WHAT IS ANALYTICS -->
 <section>
 <h2>What is Data Analytics?</h2>
 <div class="info-box">
@@ -48,116 +106,83 @@ Data Analytics is the process of examining and analyzing data to discover patter
 </div>
 </section>
 
+<!-- DATA TYPES -->
 <section>
 <h2>Data Types</h2>
 
 <div class="accordion">
 
-    <div class="accordion-item">
-        <div class="accordion-title">Structured Data</div>
-        <div class="accordion-content">
-            <p>
-            Structured data is organized in rows and columns and stored inside databases.
-            It follows a fixed schema and can be easily searched using SQL queries.
-            Examples: customer tables, login records, bank transactions, employee databases.
-            </p>
-        </div>
-    </div>
+<div class="accordion-item">
+<div class="accordion-title">Structured Data</div>
+<div class="accordion-content">
+<p>
+Structured data is organized in rows and columns and stored inside databases.
+It follows a fixed schema and can be easily searched using SQL queries.
+Examples: customer tables, login records, bank transactions, employee databases.
+</p>
+</div>
+</div>
 
-    <div class="accordion-item">
-        <div class="accordion-title">Semi-Structured Data</div>
-        <div class="accordion-content">
-            <p>
-            Semi-structured data does not follow strict tables but still has some organization using tags or keys.
-            It is commonly used in APIs and web applications.
-            Examples: JSON files, XML responses, API responses, configuration files.
-            </p>
-        </div>
-    </div>
+<div class="accordion-item">
+<div class="accordion-title">Semi-Structured Data</div>
+<div class="accordion-content">
+<p>
+Semi-structured data does not follow strict tables but still has some organization using tags or keys.
+Commonly used in APIs and web applications.
+Examples: JSON files, XML responses, API responses and configuration files.
+</p>
+</div>
+</div>
 
-    <div class="accordion-item">
-        <div class="accordion-title">Unstructured Data</div>
-        <div class="accordion-content">
-            <p>
-            Unstructured data has no predefined format and cannot be stored in traditional database tables.
-            It usually requires processing or analysis tools.
-            Examples: images, videos, audio files, emails, chat messages, social media posts.
-            </p>
-        </div>
-    </div>
+<div class="accordion-item">
+<div class="accordion-title">Unstructured Data</div>
+<div class="accordion-content">
+<p>
+Unstructured data has no predefined format and cannot be stored in traditional database tables.
+It requires processing tools to analyze.
+Examples: images, videos, emails, chat messages and social media posts.
+</p>
+</div>
+</div>
 
 </div>
 </section>
 
+<!-- DATA PIPELINE -->
 <section>
-<h2>Tools Used</h2>
-    <section>
-<h2>Data Pipeline </h2>
-
-<div class="accordion">
-
-    <div class="accordion-item">
-        <div class="accordion-title">What is a Data Pipeline?</div>
-        <div class="accordion-content">
-            <p>
-            A data pipeline is the flow of data from an application to monitoring systems.
-            Every software application continuously generates logs.
-
-            <br><br>
-            Flow:
-            <br>
-            Application → Logs → Processing → Dashboard → Alerts
-
-            <br><br>
-            Support engineers monitor this pipeline to detect issues before users report them.
-            </p>
-        </div>
-    </div>
-
+<h2>Data Pipeline (Important for Support Roles)</h2>
+<div class="info-box">
+<p>
+A data pipeline shows how system information travels inside an application:
+</p>
+<p>
+<b>Data → Logs → Processing → Dashboard → Alert</b>
+</p>
+<ul>
+<li>Application generates events</li>
+<li>Events are written into logs</li>
+<li>Logs are processed by monitoring systems</li>
+<li>Dashboards display system health</li>
+<li>Alerts are triggered when errors occur</li>
+</ul>
 </div>
 </section>
 
-
+<!-- MONITORING & LOGS -->
 <section>
 <h2>Monitoring & Logs</h2>
-
-<div class="accordion">
-
-    <div class="accordion-item">
-        <div class="accordion-title">Application Logs</div>
-        <div class="accordion-content">
-            <p>
-            Application logs record normal system activities such as user login,
-            logout, API calls and background processes.
-            Support engineers use these logs to trace user actions and system behavior.
-            </p>
-        </div>
-    </div>
-
-    <div class="accordion-item">
-        <div class="accordion-title">Error Logs</div>
-        <div class="accordion-content">
-            <p>
-            Error logs store failures inside the application such as server errors,
-            database connection failures, timeout errors and exceptions.
-            These logs are critical for debugging production issues.
-            </p>
-        </div>
-    </div>
-
-    <div class="accordion-item">
-        <div class="accordion-title">Monitoring Alerts</div>
-        <div class="accordion-content">
-            <p>
-            Monitoring tools generate alerts when abnormal activity happens.
-            Examples: high CPU usage, server down, API failures or slow response time.
-            Support teams receive alerts and investigate immediately.
-            </p>
-        </div>
-    </div>
-
+<div class="info-box">
+<ul>
+<li><b>Application Logs:</b> Track user activity like login, logout, API requests.</li>
+<li><b>Error Logs:</b> Capture failures such as server errors, database errors, authentication failures.</li>
+<li><b>Monitoring Alerts:</b> Trigger notifications when system crashes, high CPU usage or service downtime occurs.</li>
+</ul>
 </div>
 </section>
+
+<!-- TOOLS -->
+<section>
+<h2>Tools Used</h2>
 <div class="info-box">
 <ul>
 <li><b>SQL:</b> Querying database records to verify users, transactions and login issues.</li>
@@ -169,6 +194,7 @@ Data Analytics is the process of examining and analyzing data to discover patter
 </div>
 </section>
 
+<!-- IMPORTANCE -->
 <section>
 <h2>Why Data Analytics is Important</h2>
 <div class="info-box">
@@ -196,6 +222,7 @@ function toggleMenu(){
     document.querySelector(".nav-links").classList.toggle("active");
 }
 </script>
+
 <script>
 document.querySelectorAll(".accordion-title").forEach(item=>{
     item.addEventListener("click",()=>{
@@ -204,5 +231,6 @@ document.querySelectorAll(".accordion-title").forEach(item=>{
     });
 });
 </script>
+
 </body>
 </html>
