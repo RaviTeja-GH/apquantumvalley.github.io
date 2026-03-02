@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Architecture | Quantum Valley</title>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+<nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="ai.html">Artificial Intelligence</a>
+        <a href="cybersecurity.html">Cybersecurity</a>
+        <a href="cloud.html">Cloud Computing</a>
+        <a href="data.html">Data & Analytics</a>
+        <a href="web-architecture.html" class="active">Web Architecture</a>
+        <a href="quantum.html">Quantum Computing</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </div>
+</nav>
+
+<header class="hero">
+<h1>Web Architecture</h1>
+<p class="tagline">How websites and applications work behind the scenes</p>
+</header>
+
+<section>
+<h2>How a Website Loads</h2>
+<div class="info-box">
+When you type a website address in your browser, multiple systems work together:
+<ul>
+<li>Browser sends request</li>
+<li>DNS finds server IP</li>
+<li>Server processes request</li>
+<li>Database provides data</li>
+<li>Server sends response back</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Client and Server</h2>
+<div class="info-box">
+<ul>
+<li><b>Client:</b> User device (browser or mobile app)</li>
+<li><b>Server:</b> Computer that provides data and services</li>
+</ul>
+This model is called the Client–Server architecture.
+</div>
+</section>
+
+<section>
+<h2>Frontend</h2>
+<div class="info-box">
+Frontend is what the user sees in the browser.
+<ul>
+<li>HTML – structure</li>
+<li>CSS – styling</li>
+<li>JavaScript – interactivity</li>
+</ul>
+Your Quantum Valley website frontend is built using HTML and CSS.
+</div>
+</section>
+
+<section>
+<h2>Backend</h2>
+<div class="info-box">
+Backend runs on the server and processes logic.
+It handles authentication, databases and APIs.
+Examples: Node.js, Python, Java, PHP.
+</div>
+</section>
+
+<section>
+<h2>APIs</h2>
+<div class="info-box">
+An API (Application Programming Interface) allows applications to communicate.
+Example: mobile app requesting user data from a server.
+</div>
+</section>
+
+<section>
+<h2>Hosting</h2>
+<div class="info-box">
+Hosting is where a website is stored so people can access it online.
+Your website is hosted on GitHub Pages, which provides a public web server.
+</div>
+</section>
+
+<section>
+<h2>Why Web Architecture Matters</h2>
+<div class="info-box">
+Understanding web architecture helps you connect all fields:
+Cloud, Cybersecurity, Databases, DevOps and even AI systems depend on it.
+</div>
+</section>
+
+<footer>
+  <h3>Quantum Valley</h3>
+  <p>Technology Learning & Innovation Platform</p>
+  <p>Email: ravitejajavvadi25@gmail.com</p>
+  <p>Location: Hyderabad, India</p>
+  <p style="margin-top:20px; color:#94a3b8;">
+    © 2026 Quantum Valley. All Rights Reserved.
+  </p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
