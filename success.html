@@ -13,6 +13,18 @@
   gtag('js', new Date());
   gtag('config', 'G-LDPKCEGY59');
 </script>
+    <!-- Google Analytics Event Tracking -->
+<script>
+window.addEventListener("load", function() {
+    if (typeof gtag === "function") {
+        gtag('event', 'contact_form_submitted', {
+            'event_category': 'engagement',
+            'event_label': 'Contact Page',
+            'value': 1
+        });
+    }
+});
+</script>
 </head>
 
 <body>
