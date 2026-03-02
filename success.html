@@ -15,14 +15,10 @@
 </script>
     <!-- Google Analytics Event Tracking -->
 <script>
-window.addEventListener("load", function() {
-    if (typeof gtag === "function") {
-        gtag('event', 'contact_form_submitted', {
-            'event_category': 'engagement',
-            'event_label': 'Contact Page',
-            'value': 1
-        });
-    }
+gtag('event', 'contact_form_submitted', {
+  event_category: 'Contact',
+  event_label: 'Form Success Page',
+  value: 1
 });
 </script>
 </head>
