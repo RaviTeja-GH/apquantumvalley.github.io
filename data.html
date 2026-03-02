@@ -242,5 +242,18 @@ document.querySelectorAll(".accordion-title").forEach(item=>{
 });
 </script>
 
+<script>
+const user = localStorage.getItem("quantum_user");
+
+if(user){
+    const loginLink = document.querySelector('a[href="login.html"]');
+
+    if(loginLink){
+        loginLink.textContent = "Dashboard";
+        loginLink.href = "dashboard.html";
+    }
+}
+</script>
+    
 </body>
 </html>
