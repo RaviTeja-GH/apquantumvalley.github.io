@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology Roadmaps | Quantum Valley</title>
+<link rel="stylesheet" href="style.css?v=3">
+
+<style>
+
+/* page layout */
+.roadmap-container{
+max-width:1000px;
+margin:40px auto;
+padding:20px;
+}
+
+/* roadmap card */
+.roadmap{
+background:#020617;
+border:1px solid rgba(56,189,248,0.25);
+border-radius:16px;
+padding:25px;
+margin:25px 0;
+box-shadow:0 0 18px rgba(56,189,248,0.15);
+}
+
+.roadmap h3{
+color:#38bdf8;
+margin-bottom:15px;
+}
+
+/* stages */
+.stage{
+margin:15px 0;
+padding:12px 16px;
+border-left:4px solid #38bdf8;
+background:#0f172a;
+border-radius:8px;
+}
+
+.stage b{
+color:#22d3ee;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="roadmap.html">Roadmaps</a>
+<a href="ai.html">Artificial Intelligence</a>
+<a href="cybersecurity.html">Cybersecurity</a>
+<a href="cloud.html">Cloud Computing</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<header>
+<h1>Technology Learning Roadmaps</h1>
+<p class="tagline">Follow step-by-step paths to become industry ready</p>
+</header>
+
+<div class="roadmap-container">
+
+<!-- CYBERSECURITY -->
+<div class="roadmap">
+<h3>Cybersecurity Roadmap</h3>
+
+<div class="stage"><b>Beginner:</b> Computer basics, Networking basics, OSI model, IP address, DNS</div>
+
+<div class="stage"><b>Intermediate:</b> Linux commands, Firewalls, Wireshark, Vulnerability scanning</div>
+
+<div class="stage"><b>Advanced:</b> Penetration testing, Web attacks (XSS, SQL Injection), Privilege escalation</div>
+
+</div>
+
+<!-- CLOUD -->
+<div class="roadmap">
+<h3>Cloud Engineer Roadmap</h3>
+
+<div class="stage"><b>Beginner:</b> Networking, Linux basics, Virtual machines</div>
+
+<div class="stage"><b>Intermediate:</b> AWS EC2, Storage (S3), IAM users & roles</div>
+
+<div class="stage"><b>Advanced:</b> Load balancers, Auto scaling, High availability architecture</div>
+
+</div>
+
+<!-- DEVOPS -->
+<div class="roadmap">
+<h3>DevOps Roadmap</h3>
+
+<div class="stage"><b>Beginner:</b> Linux, Git & GitHub, Terminal commands</div>
+
+<div class="stage"><b>Intermediate:</b> Docker containers, CI/CD pipelines</div>
+
+<div class="stage"><b>Advanced:</b> Kubernetes, Monitoring (Prometheus), Infrastructure as Code</div>
+
+</div>
+
+<!-- QUANTUM -->
+<div class="roadmap">
+<h3>Quantum Computing Roadmap</h3>
+
+<div class="stage"><b>Beginner:</b> Linear algebra basics, Probability, Classical bits</div>
+
+<div class="stage"><b>Intermediate:</b> Qubits, Superposition, Quantum gates</div>
+
+<div class="stage"><b>Advanced:</b> Quantum algorithms, Shor’s algorithm, Quantum cryptography</div>
+
+</div>
+
+</div>
+
+<footer>
+<h3>Quantum Valley</h3>
+<p>Technology Learning & Innovation Platform</p>
+<p>Email: ravitejajavvadi25@gmail.com</p>
+<p>Location: Hyderabad, India</p>
+</footer>
+
+<script>
+function toggleMenu(){
+document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
