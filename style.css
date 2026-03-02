@@ -1,3 +1,14 @@
+/* HERO BACKGROUND */
+header{
+    background: linear-gradient(rgba(3,10,30,0.85), rgba(3,10,30,0.95)),
+                url("images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 140px 20px;
+    text-align: center;
+    color: white;
+}
 /* ===== GLOBAL ===== */
 
 *{
