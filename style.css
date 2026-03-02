@@ -1,14 +1,16 @@
-/* HERO BACKGROUND */
-header{
+/* ================= HERO (HOME PAGE ONLY) ================= */
+
+.hero{
     background: linear-gradient(rgba(3,10,30,0.85), rgba(3,10,30,0.95)),
-                url("images/hero-bg.jpg");
+                url("./images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 140px 20px;
-    text-align: center;
-    color: white;
+    padding:140px 20px;
+    text-align:center;
+    color:white;
 }
+
 /* ===== GLOBAL ===== */
 
 *{
@@ -24,7 +26,7 @@ body{
     line-height:1.6;
 }
 
-/* ===== HEADER ===== */
+/* ===== NORMAL PAGE HEADERS ===== */
 
 header{
     text-align:center;
@@ -51,7 +53,6 @@ nav{
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-/* hamburger */
 .menu-toggle{
     display:none;
     font-size:28px;
@@ -60,7 +61,6 @@ nav{
     color:#38bdf8;
 }
 
-/* links */
 .nav-links{
     display:flex;
     justify-content:center;
@@ -80,7 +80,7 @@ nav{
     color:white;
 }
 
-/* ===== CONTENT SECTIONS ===== */
+/* ===== SECTIONS ===== */
 
 section{
     max-width:900px;
@@ -98,9 +98,8 @@ section p{
     font-size:18px;
 }
 
-/* ===== CARDS ===== */
+/* ===== HOME BUTTON CARDS ===== */
 
-/* ===== DOMAIN BUTTON CARDS (HOME PAGE ONLY) ===== */
 a.card{
     display:block;
     background:#111827;
@@ -126,6 +125,7 @@ a.card:hover{
         0 0 40px rgba(56,189,248,0.35),
         0 0 80px rgba(56,189,248,0.2);
 }
+
 /* ===== FORMS ===== */
 
 form{
@@ -151,7 +151,6 @@ input:focus, textarea:focus{
     box-shadow:0 0 8px rgba(56,189,248,0.5);
 }
 
-/* buttons */
 button{
     padding:12px;
     border:none;
@@ -207,62 +206,28 @@ footer{
         margin:40px auto;
     }
 }
-/* ===== FIX LIST ALIGNMENT ===== */
+
+/* ===== LIST ALIGNMENT ===== */
 
 ul{
-    list-style-position: inside;
-    padding-left: 0;
-    margin-top: 10px;
+    list-style-position:inside;
+    padding-left:0;
+    margin-top:10px;
 }
 
 li{
     margin:8px 0;
     color:#cbd5e1;
     font-size:17px;
-    line-height:1.6;
-}
-/* ===== CONTENT PAGES LEFT ALIGN ===== */
-
-.container{
-    max-width:900px;
-    margin:60px auto;
-    padding:0 20px;
-    text-align:left;
 }
 
-.container h2{
-    text-align:left;
-}
-
-.container p{
-    text-align:left;
-}
+/* ===== CONTENT ALIGN ===== */
 
 .info-box{
     text-align:left;
 }
-.info-box ul{
-    padding-left:22px;
-}
 
-.info-box li{
-    margin:8px 0;
-}
-
-/* ===== HOME PAGE ONLY CENTER ===== */
-.home section{
-    text-align:center;
-}
-
-/* ===== CONTENT PAGES LEFT ALIGN ===== */
-.container,
-.container p,
-.container h2,
-.container ul,
-.container li{
-    text-align:left;
-}
-/* ===== CONTACT PAGE FIX ===== */
+/* ===== CONTACT PAGE ===== */
 
 .contact-form{
     margin:40px auto;
@@ -283,13 +248,8 @@ li{
     margin:0 auto;
     display:block;
 }
-/* ===== CONTACT HEADING ALIGN ===== */
 
-.contact-section h2{
-    text-align:center;
-    margin-bottom:25px;
-}
-/* ===== ACCORDION (CONTENT TOGGLE) ===== */
+/* ===== ACCORDION ===== */
 
 .accordion{
     max-width:850px;
@@ -310,11 +270,6 @@ li{
     cursor:pointer;
     font-weight:bold;
     color:#38bdf8;
-    transition:0.25s;
-}
-
-.accordion-title:hover{
-    background:#020617;
 }
 
 .accordion-content{
@@ -330,19 +285,11 @@ li{
     padding:14px 0;
 }
 
-/* open state */
 .accordion-item.active .accordion-content{
     max-height:300px;
 }
-/* ===== HERO LANDING ===== */
 
-.hero{
-    padding:120px 20px 100px;
-    text-align:center;
-    background:
-        radial-gradient(circle at 50% 30%, rgba(56,189,248,0.25), transparent 40%),
-        linear-gradient(180deg,#020617,#020617,#0f172a);
-}
+/* ===== HERO TEXT ===== */
 
 .hero-title{
     font-size:52px;
@@ -377,119 +324,5 @@ li{
     transform:scale(1.08);
     box-shadow:
         0 0 15px rgba(56,189,248,0.7),
-        0 0 35px rgba(56,189,248,0.5),
-        0 0 60px rgba(14,165,233,0.5);
-}
-/* ===== DOMAIN GRID ===== */
-
-.domains{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.domain-title{
-    font-size:34px;
-    margin-bottom:50px;
-    color:#38bdf8;
-}
-
-/* grid layout */
-.domain-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-    max-width:1100px;
-    margin:auto;
-}
-
-/* card */
-.domain-card{
-    background:rgba(15,23,42,0.7);
-    border:1px solid rgba(56,189,248,0.25);
-    border-radius:18px;
-    padding:30px 25px;
-    text-decoration:none;
-    color:white;
-    transition:0.35s;
-    position:relative;
-    overflow:hidden;
-}
-
-/* glow hover */
-.domain-card:hover{
-    transform:translateY(-8px) scale(1.03);
-    border-color:#38bdf8;
-    box-shadow:
-        0 0 15px rgba(56,189,248,0.4),
-        0 0 40px rgba(14,165,233,0.3),
-        0 0 80px rgba(14,165,233,0.25);
-}
-
-/* heading */
-.domain-card h3{
-    color:#67e8f9;
-    margin-bottom:15px;
-    font-size:22px;
-}
-
-/* description */
-.domain-card p{
-    color:#cbd5e1;
-    font-size:15px;
-    line-height:1.6;
-}
-/* ===== ABOUT SECTION FIX ===== */
-
-.about-section{
-    max-width:900px;
-    margin:40px auto 20px auto;
-    text-align:center;
-}
-
-.about-section p{
-    max-width:750px;
-    margin:15px auto;
-    color:#cbd5e1;
-    font-size:18px;
-    line-height:1.8;
-}
-/* ===== DOMAIN GRID FIX ===== */
-
-.domains{
-    max-width:1100px;
-    margin:50px auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    padding:0 20px;
-}
-
-/* card style */
-.domain-card{
-    background:rgba(15,23,42,0.6);
-    border:1px solid rgba(56,189,248,0.35);
-    border-radius:18px;
-    padding:28px 20px;
-    text-align:center;
-    transition:0.35s;
-    backdrop-filter:blur(6px);
-}
-
-/* hover glow */
-.domain-card:hover{
-    transform:translateY(-8px) scale(1.02);
-    box-shadow:
-        0 0 20px rgba(56,189,248,.4),
-        0 0 45px rgba(56,189,248,.25);
-}
-
-.domain-card h3{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-.domain-card p{
-    color:#cbd5e1;
-    font-size:15px;
-    line-height:1.6;
+        0 0 35px rgba(56,189,248,0.5);
 }
