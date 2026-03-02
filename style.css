@@ -442,3 +442,43 @@ li{
     font-size:18px;
     line-height:1.8;
 }
+/* ===== DOMAIN GRID FIX ===== */
+
+.domains{
+    max-width:1100px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:0 20px;
+}
+
+/* card style */
+.domain-card{
+    background:rgba(15,23,42,0.6);
+    border:1px solid rgba(56,189,248,0.35);
+    border-radius:18px;
+    padding:28px 20px;
+    text-align:center;
+    transition:0.35s;
+    backdrop-filter:blur(6px);
+}
+
+/* hover glow */
+.domain-card:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:
+        0 0 20px rgba(56,189,248,.4),
+        0 0 45px rgba(56,189,248,.25);
+}
+
+.domain-card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.domain-card p{
+    color:#cbd5e1;
+    font-size:15px;
+    line-height:1.6;
+}
